@@ -80,13 +80,18 @@ html {
 .slider-container {
   position: relative;
   margin-bottom: 40px;
+  height: 40px;
   width: 100%;
   padding: 0 20px;
 }
 
+.slider-wrapper {
+  height: 5px;
+}
+
 .slider-input {
   width: 90%;
-  height: 8px;
+  height: 10px;
   border-radius: 4px;
   background:rgb(112, 112, 112);
   outline: none;

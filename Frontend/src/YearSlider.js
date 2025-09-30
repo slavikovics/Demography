@@ -7,6 +7,8 @@ function YearSlider({ year, onYearChange }) {
     <div className="year-slider-container">
       <div className="year-slider">    
         <div className="slider-container">
+          <div className="slider-wrapper">
+          </div>
           <input
             type="range"
             id="year"
@@ -16,7 +18,6 @@ function YearSlider({ year, onYearChange }) {
             onChange={(e) => onYearChange(parseInt(e.target.value))}
             className="slider-input"
           />
-          
           <div className="slider-ticks">
             {years.map((currentYear) => (
               <div 
