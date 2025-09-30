@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  overflow-y: hidden;
+}
+
+.App {
+  text-align: center;
+  width: 100%;
+  overflow-y: hidden;
+}
+
+html {
+  font-family: "Montserrat", sans-serif;
+}
+
+.HeaderTitle {
+  margin-left: 5vh;
+}
+
+.Header-item {
+  color: white;
+  text-decoration: none;
+  margin-left: 5vh;
+  transition: all 0.5s;
+}
+
+.Header-item:hover {
+  color: rgb(112, 112, 112);
+}
+
+.App-header {
+  background-color: #282c34;
+  display: flex;
+  position: absolute;
+  z-index: 2000;
+  flex-direction: row;
+  overflow-x: hidden;
+  align-items: center;
+  justify-content: left;
+  font-family: "Montserrat", sans-serif;
+  color: white;
+  width: 100%;
+  height: 8vh;
+}
+
+.year-slider-footer {
+  position: absolute;
+  z-index: 1000;
+  width: 100%;
+  bottom: 0px;
+  background:#282C34;
+}
+
+.year-slider-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-top: 1%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.year-slider {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 90%;
+  max-width: 90%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.slider-container {
+  position: relative;
+  margin-bottom: 40px;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.slider-input {
+  width: 90%;
+  height: 8px;
+  border-radius: 4px;
+  background:rgb(112, 112, 112);
+  outline: none;
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.slider-input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: white;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.slider-input::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: white;
+  cursor: pointer;
+  border: 3px solid white;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.slider-ticks {
+  position: absolute;
+  top: 30px;
+  left: 20px;
+  right: 20px;
+  pointer-events: none;
+}
+
+.slider-tick {
+  position: absolute;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.tick-label {
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: bold;
+  white-space: nowrap;
+  transition: all 0.3s ease-in-out;
+}
+
+.slider-tick.active .tick-label {
+  color: white;
+  font-size: 1.2rem;
+}
