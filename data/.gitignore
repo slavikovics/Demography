@@ -1,3 +1,4 @@
 /.idea
 /belstat_parser/population.json
 /temp
+__pycache__
