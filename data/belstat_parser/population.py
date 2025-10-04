@@ -5,7 +5,7 @@ from belstat_parser.utils import build_years, save_file, load_file, exists
 
 
 def download_population_datastructures():
-    url = "https://dataportal.belstat.gov.by/osids-public-api/sdmx-api/indicator/datastructure/SDMX-JSON/10101200003"
+    url = "https://dataportal.belstat.gov.by/osids-public-api/sdmx-api/indicator/datastructure/SDMX-JSON/10101200004"
     resp = requests.get(url, timeout=30)
     resp.raise_for_status()
     save_file(resp.text, 'population.json')

@@ -20,13 +20,15 @@ html {
 }
 
 .HeaderTitle {
-  margin-left: 5vh;
+  font-size: 10px;
+  margin-left: 5%;
 }
 
 .Header-item {
+  font-size: 10px;
   color: white;
   text-decoration: none;
-  margin-left: 5vh;
+  margin-left: 5%;
   transition: all 0.5s;
 }
 
@@ -79,8 +81,8 @@ html {
 
 .slider-container {
   position: relative;
-  margin-bottom: 40px;
-  height: 40px;
+  margin-bottom: 30px;
+  height: 30px;
   width: 100%;
   padding: 0 20px;
 }
@@ -134,7 +136,7 @@ html {
 }
 
 .tick-label {
-  font-size: 0.9rem;
+  font-size: 0px;
   color: #666;
   font-weight: bold;
   white-space: nowrap;
@@ -143,5 +145,60 @@ html {
 
 .slider-tick.active .tick-label {
   color: white;
-  font-size: 1.2rem;
+  font-size: 0.6rem;
 }
+
+  @media (min-width: 968px) {
+    .tick-label {
+      font-size: 0.6rem;
+    }
+
+    .slider-tick.active .tick-label {
+      font-size: 0.8rem;
+    }
+
+    .HeaderTitle {
+      font-size: 18px;
+    }
+
+    .Header-item {
+      font-size: 15px;
+    }
+  }
+  
+  @media (min-width: 1324px) {
+    .tick-label {
+      font-size: 0.8rem;
+    }
+
+    .slider-tick.active .tick-label {
+      font-size: 1.0rem;
+    }
+
+    .HeaderTitle {
+      font-size: 26px;
+    }
+
+    .Header-item {
+      font-size: 20px;
+    }
+  }
+  
+  @media (min-width: 1920px) {
+    .tick-label {
+      font-size: 1.2rem;
+    }
+    
+    .slider-tick.active .tick-label {
+      font-size: 1.6rem;
+    }
+
+
+    .HeaderTitle {
+      font-size: 34px;
+    }
+
+    .Header-item {
+      font-size: 30px;
+    }
+  }
