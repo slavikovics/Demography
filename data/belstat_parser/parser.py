@@ -1,6 +1,7 @@
 from belstat_parser.population import get_datastructures
 from belstat_parser.population import get_population
-from belstat_parser.models import Territory, PopulationRecord
+from models.territory import Territory
+from models.population_record import PopulationRecord
 
 
 def get_territories():

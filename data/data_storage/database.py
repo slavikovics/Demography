@@ -1,7 +1,8 @@
 import sqlite3
 import os
 from typing import List, Optional
-from belstat_parser.models import Territory, PopulationRecord
+from models.territory import Territory
+from models.population_record import PopulationRecord
 
 class DemographyDatabase:
     def __init__(self, db_path: str = "demography.db"):
