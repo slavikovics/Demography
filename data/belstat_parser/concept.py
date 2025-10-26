@@ -1,4 +1,5 @@
-from belstat_parser.code_instance import Code
+from typing import List
+from belstat_parser.code import Code
 
 class Concept:
 
@@ -54,3 +55,17 @@ class Concept:
             raise Exception(f'Failed to parse concepts.')
 
         return result
+
+    def get_all_codes(self) -> List[Code]:
+        codes = []
+        for code in self.codes:
+            codes.append(code)
+
+        return codes
+    
+    def get_code_by_id(self, code_id) -> Code:
+        for code in self.codes:
+            if code.code_id == code_id:
+                return code
+            
+        return None

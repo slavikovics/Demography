@@ -1,3 +1,4 @@
+from typing import Optional
 from belstat_parser.concept import Concept
 
 class Dataflow:
@@ -24,3 +25,10 @@ class Dataflow:
 
         except:
             raise Exception('Failed to parse Dataflow.')
+
+    def get_concept_by_id(self, concept_id) -> Optional[Concept]:
+        for concept in self.concepts:
+            if concept.concept_id == concept_id:
+                return concept
+
+        return None
