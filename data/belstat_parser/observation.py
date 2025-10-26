@@ -33,6 +33,9 @@ class ObservationScheme:
             if value_id == value.index:
                 return value
         return None
+    
+    def get_real_id_by_mask_id(self, mask_id):
+        return self.values_structure[mask_id]['id']
 
 
 class Observation:
@@ -46,7 +49,7 @@ class Observation:
 
     def resolve_mask_list(self):
         for i, number in enumerate(self.mask):
-            self.mask_list.append((i, self.observation_schemes[i].get_value_by_id(number)))
+            self.mask_list.append((number, self.observation_schemes[i].get_value_by_id(number)))
 
     def __str__(self):
         result = 'Observation \nMask: '

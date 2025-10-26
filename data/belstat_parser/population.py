@@ -2,7 +2,7 @@ import requests
 import json
 from belstat_parser.dataflow import Dataflow
 from belstat_parser.dataset import Dataset
-from belstat_parser.utils import build_years, save_file, load_file, exists
+from belstat_parser.file_utils import build_years, save_file, load_file, exists
 from belstat_parser.region_utils import extract_district_codes_only
 
 
@@ -87,18 +87,21 @@ def download_population_dataset(dataflow :Dataflow, years = build_years(2010, 20
 
 def get_population(dataflow :Dataflow):
     dataset = download_population_dataset(dataflow)
-    save_file(str(dataset), 'dataset_str')
+    save_file(str(dataset), 'population_data')
+    return dataset
 
 
-def main():
+def get_datastructures():
     if not exists('population_scheme.json'):
         download_population_datastructures()
 
-    dataflow = parse_datastructures()
-    print(dataflow)
-    get_population(dataflow)
+    return parse_datastructures()
 
 
-# launch as module
+def main():
+    dataflow = get_datastructures()
+    return get_population(dataflow)
+
+
 if __name__ == '__main__':
     main()
