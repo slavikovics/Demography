@@ -22,11 +22,11 @@ def parse_datastructures():
     return dataflow
 
 
-def download_population(dataflow :Dataflow):
+def download_population_dataset(dataflow :Dataflow, years = build_years(2010, 2024)):
     url = 'https://dataportal.belstat.gov.by/osids-public-api/sdmx-api/indicator/values/SDMX-JSON/10101100004'
-    year = 2015
+    
     body_scheme = {
-        "years": [year],
+        "years": [],
         "periodicities": [],
         "units": [
             "210"
@@ -48,22 +48,46 @@ def download_population(dataflow :Dataflow):
         },
         "simbolsAfterComma": "null"
     }
-    resp = requests.post(url=url, json=body_scheme)
 
-    if resp.status_code == 200:
-        save_file(resp.text, 'population_data.json')
+    dataset = None
 
-    else:
-        raise Exception(f'Failed to load population: {resp.status_code}. {resp.text}')
+    for year in years:
+        if exists(f'population_data_{year}.json'):
+            text = load_file(f'population_data_{year}.json')
+
+            new_dataset = Dataset(json.loads(text), dataflow)
+            Dataset.add_year_observation_scheme_to_dataset(new_dataset, year, years)
+
+            if dataset is None:
+                dataset = new_dataset
+            else:
+                dataset.extend(new_dataset)
+
+            continue
+
+        body_scheme["years"] = [year]
+        resp = requests.post(url=url, json=body_scheme)
+
+        if resp.status_code == 200:
+                save_file(resp.text, f'population_data_{year}.json')
+
+                new_dataset = Dataset(json.loads(resp.text), dataflow)
+                Dataset.add_year_observation_scheme_to_dataset(new_dataset, year, years)
+
+                if dataset is None:
+                    dataset = new_dataset
+                else:
+                    dataset.extend(new_dataset)
+
+        else:
+            raise Exception(f'Failed to load population: {resp.status_code}. {resp.text}')
+    
+    return dataset
 
 
 def get_population(dataflow :Dataflow):
-    if not exists('population_data.json'):
-        download_population(dataflow)
-
-    content = load_file('population_data.json')
-    dataset = Dataset(json.loads(content), dataflow)
-    print(str(dataset))
+    dataset = download_population_dataset(dataflow)
+    save_file(str(dataset), 'dataset_str')
 
 
 def main():

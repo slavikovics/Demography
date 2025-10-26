@@ -8,7 +8,7 @@ def extract_district_codes_only(dataflow :Dataflow):
     districts = []
 
     for code in codes:
-        if code.parent is not None and 'region' in code.parent.name_en.lower() or code.code_id == '919071':
+        if code.parent is not None and 'region' in code.parent.name_en.lower() or code.code_id == '919071' or code.code_id == '699961':
             districts.append(code.code_id)
 
     return districts

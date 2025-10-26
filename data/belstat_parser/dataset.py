@@ -1,5 +1,6 @@
 from belstat_parser.observation import ObservationScheme, Observation
 from belstat_parser.dataflow import Dataflow
+from belstat_parser.value import ObservationValue
 
 
 class Dataset:
@@ -16,7 +17,7 @@ class Dataset:
 
     def load_observation_schemes(self):
         for observation_structure in self.observation_schemes_structure:
-            self.observation_schemes.append(ObservationScheme(observation_structure, self.dataflow))
+            self.observation_schemes.append(ObservationScheme(data=observation_structure, dataflow=self.dataflow))
 
     def load_observations(self):
         dataset = self.datasets[0]
@@ -49,6 +50,32 @@ class Dataset:
             result += f'{i + 1}. ' + str(observation) + '\n\n'
 
         return result
-
     
+    def extend(self, other):
+        for observation in other.observations:
+            self.observations.append(observation)
+
+    def add_observation_scheme(self, observation_scheme: ObservationScheme, observation_mask_value):
+        self.observation_schemes.append(observation_scheme)
+
+        for observation in self.observations:
+            observation.mask.append(observation_mask_value)
+            observation.observation_schemes.append(observation_scheme)
+            observation.mask_list = []
+            observation.resolve_mask_list()
+
+    @staticmethod
+    def add_year_observation_scheme_to_dataset(dataset, selected_year, years):
+        values = []
+        selected_value = None
+
+        for i, year in enumerate(years):
+            value = ObservationValue(index=i, name=year)
+            values.append(value)
+
+            if year == selected_year:
+                selected_value = i
+
+        scheme = ObservationScheme(name='year', values=values)
+        dataset.add_observation_scheme(scheme, selected_value)
     
