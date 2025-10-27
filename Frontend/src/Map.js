@@ -1,6 +1,6 @@
 import { MapContainer, TileLayer, GeoJSON, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
-import { useState } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 export default function BelarusDistrictMap({ geoJson, year }) {
   const [selectedFeature, setSelectedFeature] = useState(null);
@@ -14,8 +14,10 @@ export default function BelarusDistrictMap({ geoJson, year }) {
     fillOpacity: 0.3,
   };
 
-  // Function to fetch population data
-  const fetchPopulationData = async (territoryId, year) => {
+  // Memoize the fetch function
+  const fetchPopulationData = useCallback(async (territoryId, year) => {
+    if (!territoryId) return;
+    
     setLoading(true);
     try {
       const response = await fetch(
@@ -33,7 +35,15 @@ export default function BelarusDistrictMap({ geoJson, year }) {
       setPopulationData(null);
     }
     setLoading(false);
-  };
+  }, []);
+
+  // Refetch data when year changes and a feature is selected
+  useEffect(() => {
+    if (selectedFeature) {
+      const regionId = selectedFeature.properties.regionId;
+      fetchPopulationData(regionId, year);
+    }
+  }, [year, selectedFeature, fetchPopulationData]);
 
   const onEachDistrict = (feature, layer) => {
     layer.on({
@@ -51,7 +61,7 @@ export default function BelarusDistrictMap({ geoJson, year }) {
         const regionId = feature.properties.regionId;
         if (regionId) {
           setSelectedFeature(feature);
-          fetchPopulationData(regionId, year);
+          // Don't fetch here anymore - the useEffect will handle it
         }
       }
     });

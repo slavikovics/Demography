@@ -3,16 +3,6 @@ from forecasts.population_forecast import build_population_forecasts_for_all_dis
 from api.main import main as start_api
 
 
-def prepare_and_run():
-    print('Loading and parsing data from belstat')
-    load_data()
-
-    print('\nCreating forecasts (can take significant time)')
-    build_population_forecasts_for_all_districts()
-
-    run()
-
-
 def run():
     print('\nStarting api')
     start_api()

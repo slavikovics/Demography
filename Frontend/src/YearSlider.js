@@ -1,6 +1,6 @@
 function YearSlider({ year, onYearChange }) {
   const minYear = 2010;
-  const maxYear = 2035;
+  const maxYear = 2034;
   const years = Array.from({ length: maxYear - minYear + 1 }, (_, i) => minYear + i);
 
   return (
