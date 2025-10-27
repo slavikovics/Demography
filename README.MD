@@ -24,6 +24,7 @@ If you don't have virtualenv installed:
 pip3 install virtualenv
 ```
 - Intall dependencies from requirements.txt
+
 Go to your virtual environment:
 ```bash
 source ./.venv/bin/activate
