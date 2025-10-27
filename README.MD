@@ -10,7 +10,9 @@
 - Clone repository
 ```bash
 git clone https://github.com/slavikovics/Demography
+cd Demography
 ```
+### Without docker:
 - Go to data folder
 ```bash
 cd data
@@ -50,4 +52,10 @@ npm install
 - To launch Frontend:
 ```bash
 npm start
+```
+
+### Using docker and docker-compose:
+```bash
+sudo docker compose build
+sudo docker compose up
 ```

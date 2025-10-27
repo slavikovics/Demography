@@ -93,8 +93,8 @@ html {
 
 .slider-input {
   width: 90%;
-  height: 10px;
-  border-radius: 4px;
+  height: 20px;
+  border-radius: 15px;
   background:rgb(112, 112, 112);
   outline: none;
   -webkit-appearance: none;
