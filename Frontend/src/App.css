@@ -203,7 +203,7 @@ html {
     }
   }
 
-  .population-popup {
+.population-popup {
   min-width: 300px;
   max-width: 500px;
   max-height: 400px;
