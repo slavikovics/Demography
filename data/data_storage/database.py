@@ -3,10 +3,14 @@ import os
 from typing import List, Optional
 from models.territory import Territory
 from models.population_record import PopulationRecord
+from repositories.territory_repository import TerritoryRepository
+from repositories.population_repository import PopulationRepository
 
 class DemographyDatabase:
     def __init__(self, db_path: str = "demography.db"):
         self.db_path = db_path
+        self.territory_repo = TerritoryRepository(db_path)
+        self.population_repo = PopulationRepository(db_path)
         self.init_database()
     
     def init_database(self):
@@ -43,110 +47,35 @@ class DemographyDatabase:
         
         conn.commit()
         conn.close()
+
+    def get_connection(self):
+        return sqlite3.connect(self.db_path)
     
     def insert_territories(self, territories_data):
-
-        conn = sqlite3.connect(self.db_path)
-        cursor = conn.cursor()
-    
-        if not isinstance(territories_data, list):
-            territories_data = [territories_data]
-    
-        inserted_count = 0
-    
-        for territory in territories_data:
-            if isinstance(territory, tuple):
-                territory_tuple = territory
-            else:
-                territory_tuple = territory.to_tuple()
-        
-            try:
-                cursor.execute('''
-                    INSERT OR REPLACE INTO territories (id, name, name_ru, name_en, parent_id)
-                    VALUES (?, ?, ?, ?, ?)
-                ''', territory_tuple)
-                inserted_count += 1
-            except sqlite3.Error as e:
-                print(f"Error inserting territory {territory_tuple}: {e}")
-    
-        conn.commit()
-        conn.close()
-    
-        return inserted_count
+        return self.territory_repo.insert_territories(territories_data)
     
     def get_territory(self, territory_id: int):
-        conn = sqlite3.connect(self.db_path)
-        cursor = conn.cursor()
-        
-        cursor.execute('SELECT * FROM territories WHERE id = ?', (territory_id,))
-        result = cursor.fetchone()
-        conn.close()
-        
-        return result
+        return self.territory_repo.get_territory(territory_id)
     
     def get_all_territories(self):
-        conn = sqlite3.connect(self.db_path)
-        cursor = conn.cursor()
-        
-        cursor.execute('SELECT * FROM territories ORDER BY id')
-        results = cursor.fetchall()
-        conn.close()
-        
-        return results
-
+        return self.territory_repo.get_all_territories()
+    
     def territory_exists(self, territory_id: int) -> bool:
-        conn = sqlite3.connect(self.db_path)
-        cursor = conn.cursor()
-        
-        cursor.execute('SELECT 1 FROM territories WHERE id = ?', (territory_id,))
-        result = cursor.fetchone() is not None
-        conn.close()
-        
-        return result
+        return self.territory_repo.territory_exists(territory_id)
+    
+    def delete_territory(self, territory_id: int):
+        return self.territory_repo.delete_territory(territory_id)
+    
 
     def insert_population_records(self, population_data):
-        conn = sqlite3.connect(self.db_path)
-        cursor = conn.cursor()
-    
-        if not isinstance(population_data, list):
-            population_data = [population_data]
-    
-        inserted_count = 0
-    
-        for record in population_data:
-            if isinstance(record, tuple):
-                record_tuple = record
-            else:
-                record_tuple = record.to_tuple()
-        
-            try:
-                cursor.execute('''
-                    INSERT INTO population (territory_id, gender, people, year, age_group, type_of_area)
-                    VALUES (?, ?, ?, ?, ?, ?)
-                ''', record_tuple)
-                inserted_count += 1
-            except sqlite3.Error as e:
-                print(f"Error inserting population record {record_tuple}: {e}")
-    
-        conn.commit()
-        conn.close()
-
-        print(f'Inserted {inserted_count} population records')
-        return inserted_count
+        return self.population_repo.insert_population_records(population_data)
     
     def get_population_by_territory_and_year(self, territory_id: int, year: int):
-        conn = sqlite3.connect(self.db_path)
-        cursor = conn.cursor()
-        
-        cursor.execute('''
-            SELECT gender, people, age_group, type_of_area 
-            FROM population 
-            WHERE territory_id = ? AND year = ?
-        ''', (territory_id, year))
-        
-        results = cursor.fetchall()
-        conn.close()
-        return results
+        return self.population_repo.get_population_by_territory_and_year(territory_id, year)
+    
+    def get_all_available_territory_ids_for_population_forecast(self):
+        return self.population_repo.get_all_available_territory_ids()
+
     
     def export_to_csv(self, table_name: str, csv_path: str):
         import csv
@@ -162,14 +91,4 @@ class DemographyDatabase:
             writer.writerow([description[0] for description in cursor.description])
             writer.writerows(rows)
         
-        conn.close()
-
-    def delete_territory(self, territory_id: int):
-        conn = sqlite3.connect(self.db_path)
-        cursor = conn.cursor()
-        
-        cursor.execute('DELETE FROM population WHERE territory_id = ?', (territory_id,))
-        cursor.execute('DELETE FROM territories WHERE id = ?', (territory_id,))
-        
-        conn.commit()
         conn.close()
