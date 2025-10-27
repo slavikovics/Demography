@@ -202,3 +202,45 @@ html {
       font-size: 30px;
     }
   }
+
+  .population-popup {
+  min-width: 300px;
+  max-width: 500px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.population-popup h3 {
+  margin: 0 0 10px 0;
+  color: #333;
+  border-bottom: 2px solid #3388ff;
+  padding-bottom: 5px;
+}
+
+.population-popup h4 {
+  margin: 15px 0 8px 0;
+  color: #555;
+}
+
+.population-stats table {
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+.population-stats th {
+  background-color: #f0f0f0;
+  font-weight: bold;
+}
+
+.population-stats tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.district-label {
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-weight: bold;
+  font-size: 12px;
+}

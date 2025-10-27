@@ -3,12 +3,22 @@ from typing import List, Optional
 from data_storage.database import DemographyDatabase
 from models.population_record import PopulationRecord
 from models.territory import Territory
+from fastapi.middleware.cors import CORSMiddleware
 
 
 app = FastAPI(
     title="Demography API",
     description="API for accessing population data and forecasts",
     version="1.0.0"
+)
+
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000"],  # or ["*"] for quick dev test
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 

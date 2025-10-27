@@ -12,6 +12,7 @@
       "properties": {
         "shapeName": "Zhlobin",
         "shapeISO": "",
+        "regionId": 919130,
         "shapeID": "67162791B87321103764300",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -1021,6 +1022,7 @@
       "properties": {
         "shapeName": "Vitebsk",
         "shapeISO": "",
+        "regionId": 919099,
         "shapeID": "67162791B85815486219336",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -2174,6 +2176,7 @@
       "properties": {
         "shapeName": "Grodno",
         "shapeISO": "",
+        "regionId": 919150,
         "shapeID": "67162791B13547290723272",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -3079,6 +3082,7 @@
       "properties": {
         "shapeName": "Brest",
         "shapeISO": "",
+        "regionId": 919077,
         "shapeID": "67162791B30498032594927",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -4136,6 +4140,7 @@
       "properties": {
         "shapeName": "Bykhaw",
         "shapeISO": "",
+        "regionId": 919204,
         "shapeID": "67162791B64614066939299",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -5057,6 +5062,7 @@
       "properties": {
         "shapeName": "Dzyarzhynsk",
         "shapeISO": "",
+        "regionId": 919181,
         "shapeID": "67162791B81421428715601",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -5914,6 +5920,7 @@
       "properties": {
         "shapeName": "Minsk City",
         "shapeISO": "",
+        "regionId": 919071,
         "shapeID": "67162791B57724394311820",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -6135,6 +6142,7 @@
       "properties": {
         "shapeName": "Astravyets",
         "shapeISO": "",
+        "regionId": 919158,
         "shapeID": "67162791B54270193950847",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -6716,6 +6724,7 @@
       "properties": {
         "shapeName": "Smarhon",
         "shapeISO": "",
+        "regionId": 919162,
         "shapeID": "67162791B9257777977100",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -7485,6 +7494,7 @@
       "properties": {
         "shapeName": "Ashmyany",
         "shapeISO": "",
+        "regionId": 919159,
         "shapeID": "67162791B18933715013959",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -8030,6 +8040,7 @@
       "properties": {
         "shapeName": "Voranava",
         "shapeISO": "",
+        "regionId": 919149,
         "shapeID": "67162791B43104058935452",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -8843,6 +8854,7 @@
       "properties": {
         "shapeName": "Iwye",
         "shapeISO": "",
+        "regionId": 919153,
         "shapeID": "67162791B89656925241953",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -9640,6 +9652,7 @@
       "properties": {
         "shapeName": "Karelichy",
         "shapeISO": "",
+        "regionId": 919154,
         "shapeID": "67162791B39609385147896",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -10053,6 +10066,7 @@
       "properties": {
         "shapeName": "Novogrudok",
         "shapeISO": "",
+        "regionId": 919157,
         "shapeID": "67162791B21439902878143",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -10954,6 +10968,7 @@
       "properties": {
         "shapeName": "Lida",
         "shapeISO": "",
+        "regionId": 919155,
         "shapeID": "67162791B46145411949360",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -11839,6 +11854,7 @@
       "properties": {
         "shapeName": "Dzyatlava",
         "shapeISO": "",
+        "regionId": 919151,
         "shapeID": "67162791B37208014069458",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -12624,6 +12640,7 @@
       "properties": {
         "shapeName": "Slonim",
         "shapeISO": "",
+        "regionId": 919161,
         "shapeID": "67162791B56929358145249",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -13525,6 +13542,7 @@
       "properties": {
         "shapeName": "Zel'va",
         "shapeISO": "",
+        "regionId": 919152,
         "shapeID": "67162791B91505134452571",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -14282,6 +14300,7 @@
       "properties": {
         "shapeName": "Svislach",
         "shapeISO": "",
+        "regionId": 919160,
         "shapeID": "67162791B1668576645583",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -14895,6 +14914,7 @@
       "properties": {
         "shapeName": "Vawkavysk",
         "shapeISO": "",
+        "regionId": 919148,
         "shapeID": "67162791B87198261111694",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -15716,6 +15736,7 @@
       "properties": {
         "shapeName": "Byerastavitsa",
         "shapeISO": "",
+        "regionId": 919147,
         "shapeID": "67162791B90230438084188",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -16237,6 +16258,7 @@
       "properties": {
         "shapeName": "Masty",
         "shapeISO": "",
+        "regionId": 919156,
         "shapeID": "67162791B96733958179229",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -17290,6 +17312,7 @@
       "properties": {
         "shapeName": "Shchuchyn",
         "shapeISO": "",
+        "regionId": 919163,
         "shapeID": "67162791B66420794580046",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -18223,6 +18246,7 @@
       "properties": {
         "shapeName": "Lyelchytsy",
         "shapeISO": "",
+        "regionId": 919133,
         "shapeID": "67162791B62905803070856",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -18976,6 +19000,7 @@
       "properties": {
         "shapeName": "Zhytkavichy",
         "shapeISO": "",
+        "regionId": 919129,
         "shapeID": "67162791B281573745440",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -19925,6 +19950,7 @@
       "properties": {
         "shapeName": "Akciabrski",
         "shapeISO": "",
+        "regionId": 919137,
         "shapeID": "67162791B76840313346110",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -20766,6 +20792,7 @@
       "properties": {
         "shapeName": "Pyetrykaw",
         "shapeISO": "",
+        "regionId": 919138,
         "shapeID": "67162791B78152292733501",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -21863,6 +21890,7 @@
       "properties": {
         "shapeName": "Vietka",
         "shapeISO": "",
+        "regionId": 919125,
         "shapeID": "67162791B72598168140482",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -22452,6 +22480,7 @@
       "properties": {
         "shapeName": "Dobrush",
         "shapeISO": "",
+        "regionId": 919127,
         "shapeID": "67162791B17030122378697",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -23193,6 +23222,7 @@
       "properties": {
         "shapeName": "Gomel",
         "shapeISO": "",
+        "regionId": 919126,
         "shapeID": "67162791B13261784360532",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -24094,6 +24124,7 @@
       "properties": {
         "shapeName": "Chachersk",
         "shapeISO": "",
+        "regionId": 919143,
         "shapeID": "67162791B26710857863794",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -24855,6 +24886,7 @@
       "properties": {
         "shapeName": "Karma",
         "shapeISO": "",
+        "regionId": 919132,
         "shapeID": "67162791B17316516711258",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -25428,6 +25460,7 @@
       "properties": {
         "shapeName": "Rahachow",
         "shapeISO": "",
+        "regionId": 919140,
         "shapeID": "67162791B93010244041694",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -26433,6 +26466,7 @@
       "properties": {
         "shapeName": "Buda-Kashalyova",
         "shapeISO": "",
+        "regionId": 919124,
         "shapeID": "67162791B74774527984565",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -27306,6 +27340,7 @@
       "properties": {
         "shapeName": "Naroulia",
         "shapeISO": "",
+        "regionId": 919136,
         "shapeID": "67162791B29889808776469",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -28007,6 +28042,7 @@
       "properties": {
         "shapeName": "Mazyr",
         "shapeISO": "",
+        "regionId": 919135,
         "shapeID": "67162791B88851399193905",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -29068,6 +29104,7 @@
       "properties": {
         "shapeName": "Rechytsa",
         "shapeISO": "",
+        "regionId": 919139,
         "shapeID": "67162791B36955231142498",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -30225,6 +30262,7 @@
       "properties": {
         "shapeName": "Svietlahorsk",
         "shapeISO": "",
+        "regionId": 919141,
         "shapeID": "67162791B63369954237676",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -31362,6 +31400,7 @@
       "properties": {
         "shapeName": "Brahin",
         "shapeISO": "",
+        "regionId": 919123,
         "shapeID": "67162791B77344314095023",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -32263,6 +32302,7 @@
       "properties": {
         "shapeName": "Yelʹsk",
         "shapeISO": "",
+        "regionId": 919128,
         "shapeID": "67162791B11100068414031",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -33024,6 +33064,7 @@
       "properties": {
         "shapeName": "Kalinkavichy",
         "shapeISO": "",
+        "regionId": 919131,
         "shapeID": "67162791B95934163913722",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -34265,6 +34306,7 @@
       "properties": {
         "shapeName": "Khoiniki",
         "shapeISO": "",
+        "regionId": 919142,
         "shapeID": "67162791B63950130624576",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -35174,6 +35216,7 @@
       "properties": {
         "shapeName": "Loyew",
         "shapeISO": "",
+        "regionId": 919134,
         "shapeID": "67162791B2494752626310",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -35907,6 +35950,7 @@
       "properties": {
         "shapeName": "Stolin",
         "shapeISO": "",
+        "regionId": 919090,
         "shapeID": "67162791B20391469538668",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -36900,6 +36944,7 @@
       "properties": {
         "shapeName": "Luninets",
         "shapeISO": "",
+        "regionId": 919085,
         "shapeID": "67162791B41216407156673",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -37881,6 +37926,7 @@
       "properties": {
         "shapeName": "Pinsk",
         "shapeISO": "",
+        "regionId": 919088,
         "shapeID": "67162791B61405599198646",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -39166,6 +39212,7 @@
       "properties": {
         "shapeName": "Hantsavichy",
         "shapeISO": "",
+        "regionId": 919078,
         "shapeID": "67162791B6713137002494",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -39919,6 +39966,7 @@
       "properties": {
         "shapeName": "Baranovichy",
         "shapeISO": "",
+        "regionId": 919075,
         "shapeID": "67162791B97838850570601",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -40788,6 +40836,7 @@
       "properties": {
         "shapeName": "Byaroza",
         "shapeISO": "",
+        "regionId": 919076,
         "shapeID": "67162791B6222300561744",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -41457,6 +41506,7 @@
       "properties": {
         "shapeName": "Drahichyn",
         "shapeISO": "",
+        "regionId": 919079,
         "shapeID": "67162791B13228782215285",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -42301,6 +42351,7 @@
       "type": "Feature",
       "properties": {
         "shapeName": "Ivanava",
+        "regionId": 919081,
         "shapeISO": "",
         "shapeID": "67162791B27498157405440",
         "shapeGroup": "BLR",
@@ -43103,6 +43154,7 @@
       "properties": {
         "shapeName": "Ivatsevichy",
         "shapeISO": "",
+        "regionId": 919082,
         "shapeID": "67162791B15775504283911",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -44068,6 +44120,7 @@
       "properties": {
         "shapeName": "Kamenets",
         "shapeISO": "",
+        "regionId": 919083,
         "shapeID": "67162791B59963656038120",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -44861,6 +44914,7 @@
       "properties": {
         "shapeName": "Kobryn",
         "shapeISO": "",
+        "regionId": 919084,
         "shapeID": "67162791B1192676397695",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -45802,6 +45856,7 @@
       "properties": {
         "shapeName": "Lyakhavichy",
         "shapeISO": "",
+        "regionId": 919086,
         "shapeID": "67162791B80813457147779",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -46543,6 +46598,7 @@
       "properties": {
         "shapeName": "Malaryta",
         "shapeISO": "",
+        "regionId": 919087,
         "shapeID": "67162791B17752609820062",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -47200,6 +47256,7 @@
       "properties": {
         "shapeName": "Pruzhany",
         "shapeISO": "",
+        "regionId": 919089,
         "shapeID": "67162791B13478011403583",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -48381,6 +48438,7 @@
       "properties": {
         "shapeName": "Zhabinka",
         "shapeISO": "",
+        "regionId": 919080,
         "shapeID": "67162791B54933494059720",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -48966,6 +49024,7 @@
       "properties": {
         "shapeName": "Khotsimsk",
         "shapeISO": "",
+        "regionId": 919219,
         "shapeID": "67162791B11584975294724",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -49411,6 +49470,7 @@
       "properties": {
         "shapeName": "Kastsyukovichy",
         "shapeISO": "",
+        "regionId": 919211,
         "shapeID": "67162791B14569635979911",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -50000,6 +50060,7 @@
       "properties": {
         "shapeName": "Krasnapolle",
         "shapeISO": "",
+        "regionId": 919212,
         "shapeID": "67162791B52564132020414",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -50621,6 +50682,7 @@
       "properties": {
         "shapeName": "Klimavichy",
         "shapeISO": "",
+        "regionId": 919209,
         "shapeID": "67162791B58533541453403",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -51410,6 +51472,7 @@
       "properties": {
         "shapeName": "Krychaw",
         "shapeISO": "",
+        "regionId": 919213,
         "shapeID": "67162791B56678014739115",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -51915,6 +51978,7 @@
       "properties": {
         "shapeName": "Cherykaw",
         "shapeISO": "",
+        "regionId": 919221,
         "shapeID": "67162791B83279044546130",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -52548,6 +52612,7 @@
       "properties": {
         "shapeName": "Mstsislaw",
         "shapeISO": "",
+        "regionId": 919216,
         "shapeID": "67162791B4778855273895",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -53201,6 +53266,7 @@
       "properties": {
         "shapeName": "Slawharad",
         "shapeISO": "",
+        "regionId": 919218,
         "shapeID": "67162791B95045439516357",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -53982,6 +54048,7 @@
       "properties": {
         "shapeName": "Horki",
         "shapeISO": "",
+        "regionId": 919206,
         "shapeID": "67162791B10713618148259",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -54939,6 +55006,7 @@
       "properties": {
         "shapeName": "Shklow",
         "shapeISO": "",
+        "regionId": 919222,
         "shapeID": "67162791B50878075194487",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -55864,6 +55932,7 @@
       "properties": {
         "shapeName": "Kruhlaye",
         "shapeISO": "",
+        "regionId": 919214,
         "shapeID": "67162791B94243355622129",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -56401,6 +56470,7 @@
       "properties": {
         "shapeName": "Chavusy",
         "shapeISO": "",
+        "regionId": 919220,
         "shapeID": "67162791B68481301764251",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -57370,6 +57440,7 @@
       "properties": {
         "shapeName": "Mogilev",
         "shapeISO": "",
+        "regionId": 919215,
         "shapeID": "67162791B13586571917215",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -58511,6 +58582,7 @@
       "properties": {
         "shapeName": "Byalynichy",
         "shapeISO": "",
+        "regionId": 919202,
         "shapeID": "67162791B99339401725810",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -59384,6 +59456,7 @@
       "properties": {
         "shapeName": "Hlusk",
         "shapeISO": "",
+        "regionId": 919182,
         "shapeID": "67162791B26256964844328",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -60136,6 +60209,7 @@
       "type": "Feature",
       "properties": {
         "shapeName": "Babruysk",
+        "regionId": 919203,
         "shapeISO": "",
         "shapeID": "67162791B49466941565536",
         "shapeGroup": "BLR",
@@ -61202,6 +61276,7 @@
       "properties": {
         "shapeName": "Asipovichy",
         "shapeISO": "",
+        "regionId": 919217,
         "shapeID": "67162791B915008440335",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -62203,6 +62278,7 @@
       "properties": {
         "shapeName": "Kirawsk",
         "shapeISO": "",
+        "regionId": 919208,
         "shapeID": "67162791B61593564131840",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -63060,6 +63136,7 @@
       "properties": {
         "shapeName": "Klichaw",
         "shapeISO": "",
+        "regionId": 919210,
         "shapeID": "67162791B97539600295477",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -63985,6 +64062,7 @@
       "properties": {
         "shapeName": "Beshankovichy",
         "shapeISO": "",
+        "regionId": 919096,
         "shapeID": "67162791B20127655381780",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -65046,6 +65124,7 @@
       "properties": {
         "shapeName": "Braslaw",
         "shapeISO": "",
+        "regionId": 919097,
         "shapeID": "67162791B18102707107362",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -65827,6 +65906,7 @@
       "properties": {
         "shapeName": "Chashniki",
         "shapeISO": "",
+        "regionId": 919114,
         "shapeID": "67162791B63587233546026",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -66824,6 +66904,7 @@
       "properties": {
         "shapeName": "Dokshytsy",
         "shapeISO": "",
+        "regionId": 919102,
         "shapeID": "67162791B61932293276792",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -67669,6 +67750,7 @@
       "properties": {
         "shapeName": "Dubrowna",
         "shapeISO": "",
+        "regionId": 919103,
         "shapeID": "67162791B1773631612848",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -68254,6 +68336,7 @@
       "properties": {
         "shapeName": "Haradok",
         "shapeISO": "",
+        "regionId": 919101,
         "shapeID": "67162791B30546828632542",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -69251,6 +69334,7 @@
       "properties": {
         "shapeName": "Hlybokaye",
         "shapeISO": "",
+        "regionId": 919100,
         "shapeID": "67162791B12228546801080",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -70244,6 +70328,7 @@
       "properties": {
         "shapeName": "Lyepyel",
         "shapeISO": "",
+        "regionId": 919104,
         "shapeID": "67162791B29799454608156",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -71245,6 +71330,7 @@
       "properties": {
         "shapeName": "Liozna",
         "shapeISO": "",
+        "regionId": 919105,
         "shapeID": "67162791B19917337499758",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -71825,6 +71911,7 @@
       "type": "Feature",
       "properties": {
         "shapeName": "Miory",
+        "regionId": 919106,
         "shapeISO": "",
         "shapeID": "67162791B84307245476990",
         "shapeGroup": "BLR",
@@ -72663,6 +72750,7 @@
       "properties": {
         "shapeName": "Orsha",
         "shapeISO": "",
+        "regionId": 919107,
         "shapeID": "67162791B52368794321360",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -73716,6 +73804,7 @@
       "properties": {
         "shapeName": "Pastavy",
         "shapeISO": "",
+        "regionId": 919109,
         "shapeID": "67162791B41761210959552",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -74677,6 +74766,7 @@
       "properties": {
         "shapeName": "Polotsk",
         "shapeISO": "",
+        "regionId": 919108,
         "shapeID": "67162791B45929653886900",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -75858,6 +75948,7 @@
       "properties": {
         "shapeName": "Rasony",
         "shapeISO": "",
+        "regionId": 919110,
         "shapeID": "67162791B65560195088656",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -76667,6 +76758,7 @@
       "properties": {
         "shapeName": "Sharkawshchyna",
         "shapeISO": "",
+        "regionId": 919115,
         "shapeID": "67162791B8322834804347",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -77864,6 +77956,7 @@
       "properties": {
         "shapeName": "Shumilina",
         "shapeISO": "",
+        "regionId": 919116,
         "shapeID": "67162791B70451788382486",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -78625,6 +78718,7 @@
       "properties": {
         "shapeName": "Syanno",
         "shapeISO": "",
+        "regionId": 919111,
         "shapeID": "67162791B30203465956125",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -79638,6 +79732,7 @@
       "properties": {
         "shapeName": "Talachyn",
         "shapeISO": "",
+        "regionId": 919112,
         "shapeID": "67162791B51675752120435",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -80523,6 +80618,7 @@
       "properties": {
         "shapeName": "Ushachy",
         "shapeISO": "",
+        "regionId": 919113,
         "shapeID": "67162791B55947192119521",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -81288,6 +81384,7 @@
       "properties": {
         "shapeName": "Verkhnyadzvinsk",
         "shapeISO": "",
+        "regionId": 919098,
         "shapeID": "67162791B82603429459213",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -82177,6 +82274,7 @@
       "properties": {
         "shapeName": "Myadzyel",
         "shapeISO": "",
+        "regionId": 919189,
         "shapeID": "67162791B89573771278316",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -83214,6 +83312,7 @@
       "properties": {
         "shapeName": "Vileyka",
         "shapeISO": "",
+        "regionId": 919179,
         "shapeID": "67162791B71807573158689",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -84527,6 +84626,7 @@
       "properties": {
         "shapeName": "Valozhyn",
         "shapeISO": "",
+        "regionId": 919180,
         "shapeID": "67162791B19881563690612",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -85568,6 +85668,7 @@
       "properties": {
         "shapeName": "Maladzyechna",
         "shapeISO": "",
+        "regionId": 919188,
         "shapeID": "67162791B22380901430791",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -86389,6 +86490,7 @@
       "properties": {
         "shapeName": "Barysaw",
         "shapeISO": "",
+        "regionId": 919178,
         "shapeID": "67162791B39606099444015",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -87730,6 +87832,7 @@
       "properties": {
         "shapeName": "Byerazino",
         "shapeISO": "",
+        "regionId": 919177,
         "shapeID": "67162791B55727051267470",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -88583,6 +88686,7 @@
       "properties": {
         "shapeName": "Chervyen",
         "shapeISO": "",
+        "regionId": 919198,
         "shapeID": "67162791B52884935059856",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -89684,6 +89788,7 @@
       "properties": {
         "shapeName": "Kapyl",
         "shapeISO": "",
+        "regionId": 919183,
         "shapeID": "67162791B49789732024983",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -90569,6 +90674,7 @@
       "properties": {
         "shapeName": "Kletsk",
         "shapeISO": "",
+        "regionId": 919182,
         "shapeID": "67162791B94687657655016",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -91334,6 +91440,7 @@
       "properties": {
         "shapeName": "Krupki",
         "shapeISO": "",
+        "regionId": 919184,
         "shapeID": "67162791B85718992399445",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -92367,6 +92474,7 @@
       "properties": {
         "shapeName": "Lahoysk",
         "shapeISO": "",
+        "regionId": 919185,
         "shapeID": "67162791B73059269727639",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -93500,6 +93608,7 @@
       "properties": {
         "shapeName": "Lyuban",
         "shapeISO": "",
+        "regionId": 919186,
         "shapeID": "67162791B60458568388386",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -94161,6 +94270,7 @@
       "properties": {
         "shapeName": "Minsk",
         "shapeISO": "",
+        "regionId": 919187,
         "shapeID": "67162791B84471344127718",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -95576,6 +95686,7 @@
       "properties": {
         "shapeName": "Nyasvizh",
         "shapeISO": "",
+        "regionId": 919190,
         "shapeID": "67162791B10653728732828",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -96209,6 +96320,7 @@
       "properties": {
         "shapeName": "Puchavičy",
         "shapeISO": "",
+        "regionId": 919191,
         "shapeID": "67162791B58974730621112",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -97566,6 +97678,7 @@
       "properties": {
         "shapeName": "Slutsk",
         "shapeISO": "",
+        "regionId": 919192,
         "shapeID": "67162791B93573624741448",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -98707,6 +98820,7 @@
       "properties": {
         "shapeName": "Smalyavichy",
         "shapeISO": "",
+        "regionId": 919193,
         "shapeID": "67162791B46914171064537",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -99724,6 +99838,7 @@
       "properties": {
         "shapeName": "Staryya Darohi",
         "shapeISO": "",
+        "regionId": 919195,
         "shapeID": "67162791B98065545782790",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -100521,6 +100636,7 @@
       "properties": {
         "shapeName": "Stowbtsy",
         "shapeISO": "",
+        "regionId": 919196,
         "shapeID": "67162791B19818766020383",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -101378,6 +101494,7 @@
       "properties": {
         "shapeName": "Uzda",
         "shapeISO": "",
+        "regionId": 919197,
         "shapeID": "67162791B57084664446232",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
@@ -102539,6 +102656,7 @@
       "properties": {
         "shapeName": "Salihorsk",
         "shapeISO": "",
+        "regionId": 919194,
         "shapeID": "67162791B12460087089540",
         "shapeGroup": "BLR",
         "shapeType": "ADM2"
