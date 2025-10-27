@@ -17,11 +17,12 @@ export default function BelarusDistrictMap({ geoJson, year }) {
   // Memoize the fetch function
   const fetchPopulationData = useCallback(async (territoryId, year) => {
     if (!territoryId) return;
-    
+    const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+
     setLoading(true);
     try {
       const response = await fetch(
-        `http://localhost:8000/population/?territory_id=${territoryId}&year=${year}`
+        `${apiUrl}/population/?territory_id=${territoryId}&year=${year}`
       );
       if (response.ok) {
         const data = await response.json();
