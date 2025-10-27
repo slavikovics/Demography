@@ -24,7 +24,7 @@ function YearSlider({ year, onYearChange }) {
                 key={currentYear} 
                 className={`slider-tick ${currentYear === year ? 'active' : ''}`}
                 style={{ 
-                  left: `${((currentYear - minYear) / (maxYear - minYear)) * 90 + 5}%` 
+                  left: `${((currentYear - minYear) / (maxYear - minYear)) * 100}%` 
                 }}
               >
                 <span className="tick-label">{currentYear}</span>
