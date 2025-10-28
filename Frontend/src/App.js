@@ -1,4 +1,5 @@
 import './App.css';
+import './Scrollbars.css'
 import React from 'react';
 import YearSlider from './YearSlider';
 import Header from './Header';
@@ -6,7 +7,7 @@ import BelarusDistrictMap from './Map';
 import belarusGeoJson from './belarus-districts.json';
 
 function App() {
-  const [year, setYear] = React.useState(2020);
+  const [year, setYear] = React.useState(2024);
   
   return (
     <div className="App">

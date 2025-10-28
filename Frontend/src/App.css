@@ -211,11 +211,10 @@ html, body, #root {
   min-width: 280px;
   max-width: 380px;
   max-height: 420px;
-  height: 420px;
   font-family: "Montserrat", sans-serif;
   padding: 0;
   border-radius: 16px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.19);
   background: white;
   border: none;
 }
@@ -420,7 +419,6 @@ html, body, #root {
   border-radius: 10px;
   text-align: center;
   margin-top: 10px;
-  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.3);
 }
 
 .leaflet-popup-close-button {
@@ -560,8 +558,9 @@ html, body, #root {
 
 @media (max-width: 480px) {
   .population-popup {
-    min-width: 280px;
-    max-width: 90vw;
+    min-width: 180px;
+    max-width: 30vw;
+    max-height: 50vh;
   }
   
   .stats-grid {

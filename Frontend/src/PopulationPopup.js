@@ -5,7 +5,8 @@ export default function PopulationPopup({
   populationData, 
   loading, 
   year, 
-  onClose 
+  onClose,
+  showDetailedData = true
 }) {
   if (!selectedFeature) return null;
 
@@ -86,7 +87,8 @@ export default function PopulationPopup({
                 </div>
               </div>
 
-              {populationData.length > 0 && (
+              {/* Conditional rendering based on showDetailedData prop */}
+              {showDetailedData && populationData.length > 0 && (
                 <div className="data-section">
                   <div className="section-title">Detailed Breakdown</div>
                   <table className="population-table">

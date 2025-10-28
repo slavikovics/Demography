@@ -4,6 +4,7 @@ import "leaflet/dist/leaflet.css";
 import { useState, useEffect, useCallback } from 'react';
 import DistrictLayer from './DistrictLayer';
 import PopulationPopup from './PopulationPopup';
+import CountryOverview from "./CountryOverview";
 
 const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000';
 
@@ -79,6 +80,8 @@ export default function BelarusDistrictMap({ geoJson, year }) {
         year={year}
         onClose={handlePopupClose}
       />
+
+      <CountryOverview year={year} />
     </MapContainer>
   );
 }

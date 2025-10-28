@@ -1,0 +1,170 @@
+/* CountryOverview.css */
+.country-overview-container {
+  position: absolute;
+  top: 10vh; /* Below header */
+  left: 20px;
+  z-index: 1000;
+  max-width: 280px;
+  max-width: 280px;
+}
+
+.country-overview-popup {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  font-family: "Montserrat", sans-serif;
+}
+
+.country-overview-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.country-overview-header h3 {
+  margin: auto;
+  font-size: 1.2rem;
+  font-weight: 700;
+  position: relative;
+  z-index: 1;
+}
+
+.country-overview-meta {
+  display: flex;
+  gap: 4px;
+  position: relative;
+  z-index: 1;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.8rem;
+  opacity: 0.9;
+}
+
+.meta-item strong {
+  font-weight: 600;
+  color: white;
+}
+
+.country-overview-content {
+  padding: 5px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+/* Stats Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 0px;
+}
+
+.stat-card {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  padding: 8px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  border-color: #cbd5e0;
+}
+
+.stat-value {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #1a365d;
+  margin-bottom: 2px;
+}
+
+.stat-label {
+  font-size: 0.5rem;
+  color: #64748b;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Gender colors */
+.gender-male {
+  color: #3b82f6;
+}
+
+.gender-female {
+  color: #ec4899;
+}
+
+.gender-total {
+  color: #1a365d;
+}
+
+/* Loading States */
+.loading-state {
+  text-align: center;
+  padding: 30px 20px;
+  color: #64748b;
+}
+
+.loading-spinner {
+  width: 28px;
+  height: 28px;
+  border: 3px solid #f1f5f9;
+  border-top: 3px solid #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 12px;
+}
+
+.no-data-state {
+  text-align: center;
+  padding: 30px 20px;
+  color: #94a3b8;
+}
+
+.no-data-icon {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  opacity: 0.5;
+}
+
+/* Custom scrollbar */
+.country-overview-content::-webkit-scrollbar {
+  width: 4px;
+}
+
+.country-overview-content::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 2px;
+}
+
+.country-overview-content::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #cbd5e0, #94a3b8);
+  border-radius: 2px;
+}
+
+.country-overview-content::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #94a3b8, #64748b);
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive */
+@media (max-width: 650px) {
+  .country-overview-container {
+    display: none;
+  }
+}
