@@ -1,10 +1,11 @@
 # Belarusian demography
-## Tasks:
-- Create parser for SDMX-JSON datastructures.
-- Get all needed data and save it to database.
-- Predict future values using AI library.
-- API for the frontend to receive data.
-- Create frontend to display the results.
+![Frontend]('./images/frontend.png')
+## Acomplished tasks:
+- Parsing SDMX-JSON datastructures from belstat. 
+- Fetching data and saving to database.
+- Forecasting future values using library Prophet.
+- Creating FastAPI API for the web-frontend to receive data.
+- Creating Frontend to display demographic data and forecasts.
 
 ## How to launch:
 - Clone repository
