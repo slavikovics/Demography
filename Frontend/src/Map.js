@@ -1,4 +1,3 @@
-// BelarusDistrictMap.js
 import { MapContainer, TileLayer } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import { useState, useEffect, useCallback } from 'react';
@@ -35,7 +34,6 @@ export default function BelarusDistrictMap({ geoJson, year }) {
     setLoading(false);
   }, []);
 
-  // Refetch data when year changes and a feature is selected
   useEffect(() => {
     if (selectedFeature) {
       const regionId = selectedFeature.properties.regionId;

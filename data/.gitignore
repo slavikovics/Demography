@@ -1,5 +1,6 @@
 /.idea
 /belstat_parser/population.json
+temp
 /temp
 __pycache__
 demography.db

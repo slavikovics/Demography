@@ -13,7 +13,6 @@ function App() {
     <div className="App">
       <Header/>
       <div className="map-container">
-        {/* Pass year prop to the map component */}
         <BelarusDistrictMap geoJson={belarusGeoJson} year={year}/>
       </div>
       <footer className='year-slider-footer'>

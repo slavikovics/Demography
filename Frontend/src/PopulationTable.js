@@ -1,4 +1,3 @@
-// PopulationTable.js
 export default function PopulationTable({ populationData }) {
   const totalPopulation = populationData
     .filter(record => record.gender === 'Total')

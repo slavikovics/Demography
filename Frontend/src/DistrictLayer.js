@@ -1,4 +1,3 @@
-// DistrictLayer.js
 import { GeoJSON } from "react-leaflet";
 
 const districtStyle = {

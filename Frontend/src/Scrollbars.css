@@ -1,4 +1,3 @@
-/* Beautiful Scrollbar Styles for Entire Website */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -29,15 +28,11 @@
   background: #f1f5f9;
 }
 
-/* Firefox */
 * {
   scrollbar-width: thin;
   scrollbar-color: #cbd5e0 #f1f5f9;
 }
 
-/* Specific scrollbar styles for different containers */
-
-/* Main page scrollbar */
 html::-webkit-scrollbar {
   width: 12px;
 }
@@ -55,7 +50,6 @@ html::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
 }
 
-/* Popup scrollbars - more subtle */
 .population-popup-content::-webkit-scrollbar,
 .country-overview-content::-webkit-scrollbar {
   width: 6px;
@@ -78,7 +72,6 @@ html::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(135deg, #94a3b8, #64748b);
 }
 
-/* Map container scrollbar (if needed) */
 .map-container::-webkit-scrollbar {
   width: 6px;
 }
@@ -97,7 +90,6 @@ html::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(135deg, rgba(148, 163, 184, 0.9), rgba(100, 116, 139, 0.9));
 }
 
-/* Header scrollbar (if content overflows) */
 .App-header::-webkit-scrollbar {
   height: 4px;
 }
@@ -116,7 +108,6 @@ html::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.7));
 }
 
-/* Year slider container scrollbar */
 .year-slider-container::-webkit-scrollbar {
   height: 4px;
 }
@@ -135,12 +126,10 @@ html::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.7));
 }
 
-/* Smooth scrolling for the entire site */
 html {
   scroll-behavior: smooth;
 }
 
-/* Custom scrollbar for code blocks or pre elements */
 pre::-webkit-scrollbar {
   height: 6px;
 }
@@ -159,7 +148,6 @@ pre::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(135deg, #2d3748, #1a202c);
 }
 
-/* Table scrollbars */
 table::-webkit-scrollbar {
   height: 6px;
 }
@@ -178,7 +166,6 @@ table::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(135deg, #cbd5e0, #a0aec0);
 }
 
-/* Animation for scrollbar appearance */
 ::-webkit-scrollbar-thumb {
   animation: fadeInScrollbar 0.5s ease-in-out;
 }

@@ -1,4 +1,3 @@
-// CountryOverview.js
 import React from 'react';
 import './CountryOverview.css';
 
@@ -8,7 +7,6 @@ export default function CountryOverview({ year }) {
   const [countryData, setCountryData] = React.useState(null);
   const [loading, setLoading] = React.useState(false);
 
-  // Fetch country data when year changes
   React.useEffect(() => {
     const fetchCountryData = async () => {
       setLoading(true);
