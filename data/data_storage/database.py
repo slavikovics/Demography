@@ -80,6 +80,12 @@ class DemographyDatabase:
     def get_available_models(self, territory_id: int):
         """Получить доступные модели прогнозирования для территории"""
         return self.population_repo.get_available_models_for_territory(territory_id)
+
+    def get_population_table(self, sort_by, sorting_direction):
+        return self.population_repo.get_population_table(sort_by, sorting_direction)
+
+    def get_population_table_fields(self):
+        return self.population_repo.get_population_table_fields()
     
     def export_to_csv(self, table_name: str, csv_path: str):
         import csv

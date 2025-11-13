@@ -3,6 +3,7 @@ from typing import List, Optional
 from data_storage.database import DemographyDatabase
 from models.population_record import PopulationRecord
 from models.territory import Territory
+from models.table_record import TableRecord
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(
@@ -76,6 +77,33 @@ async def get_available_territories():
         
         return {"territories": territory_list, "count": len(territory_list)}
         
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Internal server error: {str(e)}")
+
+@app.get("/population_table/")
+async def get_population_table(
+        sort_by: Optional[str] = Query(None, description="Sort by field"),
+        sorting_direction: Optional[str] = Query("asc", description="Sorting direction: 'asc' or 'desc'")
+):
+    try:
+        population_table = db.get_population_table(sort_by, sorting_direction)
+        records = []
+        for record_tuple in population_table:
+            record = TableRecord.from_tuple(record_tuple)
+            records.append(record)
+
+        # Возвращаем словари для корректной сериализации в JSON
+        return [record.to_dict() for record in records]
+
+    except Exception as e:
+        print(e)
+        raise HTTPException(status_code=500, detail=f"Internal server error: {str(e)}")
+
+@app.get("/population_table/fields")
+async def get_population_table_fields():
+    try:
+        fields = db.get_population_table_fields()
+        return {"fields": fields}
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Internal server error: {str(e)}")
 
