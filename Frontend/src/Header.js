@@ -2,28 +2,51 @@ import { useState } from 'react';
 import './Header.css';
 
 function Header({ selectedLanguage, onLanguageChange, selectedModel, onModelChange }) {
+  // Локализация для всех элементов
+  const translations = {
+    russian: {
+      title: "Демография Беларуси",
+      github: "Github",
+      belstat: "Belstat",
+      // Названия моделей
+      prophet: "Prophet",
+      linear: "Линейная регрессия",
+      exponential: "Экспоненциальное сглаживание",
+      // Языки
+      russian: "Русский",
+      english: "English"
+    },
+    english: {
+      title: "Belarusian Demography",
+      github: "Github",
+      belstat: "Belstat",
+      // Названия моделей
+      prophet: "Prophet",
+      linear: "Linear Regression",
+      exponential: "Exponential Smoothing",
+      // Языки
+      russian: "Russian",
+      english: "English"
+    }
+  };
+
+  const t = translations[selectedLanguage] || translations.russian;
+
+  // Массивы для выпадающих списков с локализованными названиями
   const languages = [
-    { value: 'russian', label: 'Русский' },
-    { value: 'english', label: 'English' }
+    { value: 'russian', label: t.russian },
+    { value: 'english', label: t.english }
   ];
 
   const models = [
-    { value: 'prophet', label: 'Prophet' },
-    { value: 'linear', label: 'Линейная регрессия' },
-    { value: 'exponential', label: 'Экспоненциальное сглаживание' }
+    { value: 'prophet', label: t.prophet },
+    { value: 'linear', label: t.linear },
+    { value: 'exponential', label: t.exponential }
   ];
-
-  // Локализация для заголовка
-  const titleTranslations = {
-    russian: "Демография Беларуси",
-    english: "Belarusian Demography"
-  };
-
-  const headerTitle = titleTranslations[selectedLanguage] || titleTranslations.english;
 
   return (
     <header className="App-header">
-      <h2 className="HeaderTitle">{headerTitle}</h2>
+      <h2 className="HeaderTitle">{t.title}</h2>
       
       <div className="header-controls">
         <div className="comboBox-container compact">
@@ -57,8 +80,8 @@ function Header({ selectedLanguage, onLanguageChange, selectedModel, onModelChan
         </div>
       </div>
 
-      <a className="Header-item" href="https://github.com/slavikovics/Demography">Github</a>
-      <a className="Header-item" href="https://dataportal.belstat.gov.by/osids/home-page">Belstat</a>
+      <a className="Header-item" href="https://github.com/slavikovics/Demography">{t.github}</a>
+      <a className="Header-item" href="https://dataportal.belstat.gov.by/osids/home-page">{t.belstat}</a>
     </header>
   );
 }
