@@ -9,6 +9,7 @@ const translations = {
     countryName: "Республика Беларусь",
     year: "Год",
     regionId: "ID региона",
+    model: "Модель",
     loading: "Загрузка данных о населении...",
     total: "Всего",
     male: "Мужчины",
@@ -16,12 +17,17 @@ const translations = {
     records: "Записи",
     noData: "Данные о населении отсутствуют",
     for: "для",
-    in: "в"
+    in: "в",
+    historical: "Исторические данные",
+    prophet: "Prophet",
+    linear: "Линейная регрессия",
+    exponential: "Экспоненциальное сглаживание"
   },
   english: {
     countryName: "Republic of Belarus",
     year: "Year",
     regionId: "Region ID",
+    model: "Model",
     loading: "Loading population data...",
     total: "Total",
     male: "Male",
@@ -29,24 +35,40 @@ const translations = {
     records: "Records",
     noData: "No population data available",
     for: "for",
-    in: "in"
+    in: "in",
+    historical: "Historical data",
+    prophet: "Prophet",
+    linear: "Linear regression",
+    exponential: "Exponential smoothing"
   }
 };
 
-export default function CountryOverview({ year, language = 'russian' }) {
+export default function CountryOverview({ year, language = 'russian', selectedModel = 'prophet' }) {
   const [countryData, setCountryData] = React.useState(null);
   const [loading, setLoading] = React.useState(false);
 
   // Получаем переводы для выбранного языка
   const t = translations[language] || translations.russian;
 
+  // Функция для получения локализованного названия модели
+  const getLocalizedModelName = (model) => {
+    switch (model) {
+      case 'historical': return t.historical;
+      case 'prophet': return t.prophet;
+      case 'linear': return t.linear;
+      case 'exponential': return t.exponential;
+      default: return model;
+    }
+  };
+
   React.useEffect(() => {
     const fetchCountryData = async () => {
       setLoading(true);
       try {
-        const response = await fetch(
-          `${apiUrl}/population/?territory_id=699961&year=${year}`
-        );
+        // Добавляем параметр model в запрос
+        const url = `${apiUrl}/population/?territory_id=699961&year=${year}&model=${selectedModel}`;
+        const response = await fetch(url);
+        
         if (response.ok) {
           const data = await response.json();
           setCountryData(data);
@@ -61,7 +83,7 @@ export default function CountryOverview({ year, language = 'russian' }) {
     };
 
     fetchCountryData();
-  }, [year]);
+  }, [year, selectedModel]); // Добавляем selectedModel в зависимости
 
   const getGenderClass = (gender) => {
     switch (gender?.toLowerCase()) {
@@ -148,7 +170,7 @@ export default function CountryOverview({ year, language = 'russian' }) {
               <div className="no-data-icon">📊</div>
               <p>{t.noData}</p>
               <p style={{ fontSize: '0.8rem', marginTop: '8px' }}>
-                {t.for} {t.countryName} {t.in} {year}
+                {t.for} {t.countryName} {t.in} {year} ({getLocalizedModelName(selectedModel)})
               </p>
             </div>
           )}

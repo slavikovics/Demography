@@ -33,6 +33,7 @@ function App() {
         <BelarusDistrictMap 
           geoJson={belarusGeoJson} 
           year={year}
+          selectedModel={selectedModel}
           language={selectedLanguage}
         />
       </div>

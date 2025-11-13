@@ -18,7 +18,7 @@ const translations = {
     for: "для",
     moreRecords: "еще записей",
     all: "Все",
-    allAges: "Все возраста" // Добавлен перевод для "By all age"
+    allAges: "Все возраста"
   },
   english: {
     loading: "Loading population data...",
@@ -36,7 +36,7 @@ const translations = {
     for: "for",
     moreRecords: "more records",
     all: "All",
-    allAges: "All ages" // Добавлен перевод для "By all age"
+    allAges: "All ages"
   }
 };
 
@@ -47,7 +47,7 @@ export default function PopulationPopup({
   year, 
   onClose,
   showDetailedData = true,
-  language = 'russian' // Добавляем пропс для языка
+  language = 'russian'
 }) {
   if (!selectedFeature) return null;
 
@@ -123,8 +123,8 @@ export default function PopulationPopup({
       <div className="population-popup">
         <div className="population-popup-header">
           <h3>
-            {language === 'russian' && selectedFeature.properties.shapeNameRu 
-              ? selectedFeature.properties.shapeNameRu 
+            {language === 'russian' && selectedFeature.properties.shapeNameRu
+              ? selectedFeature.properties.shapeNameRu
               : selectedFeature.properties.shapeName}
           </h3>
           <div className="population-popup-meta">

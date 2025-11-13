@@ -23,8 +23,8 @@ class PopulationRepository:
         
             try:
                 cursor.execute('''
-                    INSERT INTO population (territory_id, gender, people, year, age_group, type_of_area)
-                    VALUES (?, ?, ?, ?, ?, ?)
+                    INSERT INTO population (territory_id, gender, people, year, age_group, type_of_area, model)
+                    VALUES (?, ?, ?, ?, ?, ?, ?)
                 ''', record_tuple)
                 inserted_count += 1
             except sqlite3.Error as e:
@@ -36,15 +36,22 @@ class PopulationRepository:
         print(f'Inserted {inserted_count} population records')
         return inserted_count
     
-    def get_population_by_territory_and_year(self, territory_id: int, year: int):
+    def get_population_by_territory_and_year(self, territory_id: int, year: int, model: Optional[str] = None):
         conn = sqlite3.connect(self.db_path)
         cursor = conn.cursor()
         
-        cursor.execute('''
-            SELECT id, territory_id, gender, people, year, age_group, type_of_area 
-            FROM population 
-            WHERE territory_id = ? AND year = ?
-        ''', (territory_id, year))
+        if model:
+            cursor.execute('''
+                SELECT id, territory_id, gender, people, year, age_group, type_of_area, model
+                FROM population 
+                WHERE territory_id = ? AND year = ? AND model = ?
+            ''', (territory_id, year, model))
+        else:
+            cursor.execute('''
+                SELECT id, territory_id, gender, people, year, age_group, type_of_area, model
+                FROM population 
+                WHERE territory_id = ? AND year = ?
+            ''', (territory_id, year))
         
         results = cursor.fetchall()
         conn.close()
@@ -57,6 +64,20 @@ class PopulationRepository:
             SELECT DISTINCT territory_id 
             FROM population
         ''')
+        
+        results = [row[0] for row in cursor.fetchall()]
+        conn.close()
+        return results
+
+    def get_available_models_for_territory(self, territory_id: int):
+        """Получить доступные модели прогнозирования для территории"""
+        conn = sqlite3.connect(self.db_path)
+        cursor = conn.cursor()
+        cursor.execute('''
+            SELECT DISTINCT model 
+            FROM population 
+            WHERE territory_id = ? AND model IS NOT NULL
+        ''', (territory_id,))
         
         results = [row[0] for row in cursor.fetchall()]
         conn.close()
