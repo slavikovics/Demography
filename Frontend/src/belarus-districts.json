@@ -5919,6 +5919,7 @@
       "type": "Feature",
       "properties": {
         "shapeName": "Minsk City",
+        "shapeNameRu": "Город Минск",
         "shapeISO": "",
         "regionId": 919071,
         "shapeID": "67162791B57724394311820",

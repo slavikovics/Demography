@@ -7,7 +7,7 @@ import CountryOverview from "./CountryOverview";
 
 const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000';
 
-export default function BelarusDistrictMap({ geoJson, year }) {
+export default function BelarusDistrictMap({ geoJson, year, language }) {
   const [selectedFeature, setSelectedFeature] = useState(null);
   const [populationData, setPopulationData] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -77,9 +77,10 @@ export default function BelarusDistrictMap({ geoJson, year }) {
         loading={loading}
         year={year}
         onClose={handlePopupClose}
+        language={language}
       />
 
-      <CountryOverview year={year} />
+      <CountryOverview year={year} language={language} />
     </MapContainer>
   );
 }

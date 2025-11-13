@@ -1,10 +1,7 @@
 import { useState } from 'react';
 import './Header.css';
 
-function Header() {
-  const [selectedLanguage, setSelectedLanguage] = useState('russian');
-  const [selectedModel, setSelectedModel] = useState('prophet');
-
+function Header({ selectedLanguage, onLanguageChange, selectedModel, onModelChange }) {
   const languages = [
     { value: 'russian', label: 'Русский' },
     { value: 'english', label: 'English' }
@@ -16,19 +13,17 @@ function Header() {
     { value: 'exponential', label: 'Экспоненциальное сглаживание' }
   ];
 
-  const handleLanguageChange = (event) => {
-    setSelectedLanguage(event.target.value);
-    console.log('Selected language:', event.target.value);
+  // Локализация для заголовка
+  const titleTranslations = {
+    russian: "Демография Беларуси",
+    english: "Belarusian Demography"
   };
 
-  const handleModelChange = (event) => {
-    setSelectedModel(event.target.value);
-    console.log('Selected model:', event.target.value);
-  };
+  const headerTitle = titleTranslations[selectedLanguage] || titleTranslations.english;
 
   return (
     <header className="App-header">
-      <h2 className="HeaderTitle">Belarusian Demography</h2>
+      <h2 className="HeaderTitle">{headerTitle}</h2>
       
       <div className="header-controls">
         <div className="comboBox-container compact">
@@ -36,7 +31,7 @@ function Header() {
             id="language-select"
             className="comboBox compact"
             value={selectedLanguage}
-            onChange={handleLanguageChange}
+            onChange={onLanguageChange}
           >
             {languages.map(lang => (
               <option key={lang.value} value={lang.value}>
@@ -51,7 +46,7 @@ function Header() {
             id="model-select"
             className="comboBox compact"
             value={selectedModel}
-            onChange={handleModelChange}
+            onChange={onModelChange}
           >
             {models.map(model => (
               <option key={model.value} value={model.value}>
