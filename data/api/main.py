@@ -107,6 +107,15 @@ async def get_population_table_fields():
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Internal server error: {str(e)}")
 
+@app.get("/population_table/interesting_data")
+async def get_interesting_data():
+    try:
+        fields = db.get_interesting_data()
+        return {"fields": fields}
+    except Exception as e:
+        print(e)
+        raise HTTPException(status_code=500, detail=f"Internal server error: {str(e)}")
+
 def main():
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=5000)

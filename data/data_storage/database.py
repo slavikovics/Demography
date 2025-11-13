@@ -86,6 +86,9 @@ class DemographyDatabase:
 
     def get_population_table_fields(self):
         return self.population_repo.get_population_table_fields()
+
+    def get_interesting_data(self):
+        return self.population_repo.get_interesting_data()
     
     def export_to_csv(self, table_name: str, csv_path: str):
         import csv

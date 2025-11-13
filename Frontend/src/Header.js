@@ -67,12 +67,20 @@ function Header({ selectedLanguage, onLanguageChange, selectedModel, onModelChan
                         ))}
                     </select>
                 </div>
-                <div className="comboBox-container compact">
-                    <select id="tab-select" className="comboBox compact" value={selectedTab} onChange={onTabChange}>
-                        {tabs.map(tab => (
-                            <option key={tab.value} value={tab.value}>{tab.label}</option>
-                        ))}
-                    </select>
+                <div className="tab-links">
+                    {tabs.map(tab => (
+                        <a
+                            key={tab.value}
+                            href="#"
+                            className={`tab-link${selectedTab === tab.value ? ' active' : ''}`}
+                            onClick={e => {
+                                e.preventDefault();
+                                onTabChange({ target: { value: tab.value } });
+                            }}
+                        >
+                            {tab.label}
+                        </a>
+                    ))}
                 </div>
             </div>
             <a className="Header-item" href="https://github.com/slavikovics/Demography">{t.github}</a>

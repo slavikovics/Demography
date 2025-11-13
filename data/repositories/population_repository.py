@@ -120,3 +120,76 @@ class PopulationRepository:
             raise
 
         return results
+
+    def get_interesting_data(self):
+        results = []
+        conn = sqlite3.connect(self.db_path)
+        cursor = conn.cursor()
+        query = f'''
+            SELECT name_ru, name_en, people
+            FROM population
+            JOIN territories ON population.territory_id = territories.id
+            WHERE year = 2024 AND gender = 'Total'
+            ORDER BY people ASC
+            LIMIT 1
+        '''
+        cursor.execute(query)
+        results.append(cursor.fetchall())
+        query = f'''
+            SELECT name_ru, name_en, people
+            FROM (
+                SELECT 
+                    t.name_ru, 
+                    t.name_en, 
+                    p.people,
+                    RANK() OVER (ORDER BY p.people DESC) as rank
+                FROM population p
+                JOIN territories t ON p.territory_id = t.id
+                WHERE p.year = 2024 AND p.gender = 'Total'
+            ) ranked
+            WHERE rank = 2;
+        '''
+        cursor.execute(query)
+        results.append(cursor.fetchall())
+        query = f'''
+            SELECT name_ru, name_en, people_growth
+            FROM (
+                SELECT 
+                    t.name_ru, 
+                    t.name_en, 
+                    (p24.people - p23.people) as people_growth,
+                    ROW_NUMBER() OVER (ORDER BY (p24.people - p23.people) ASC) as row_num
+                FROM territories t
+                    JOIN population p24 ON t.id = p24.territory_id
+                    JOIN population p23 ON t.id = p23.territory_id
+                WHERE p24.year = 2024 
+                        AND p23.year = 2023
+                        AND p24.gender = 'Total'
+                        AND p23.gender = 'Total'
+            ) ranked
+            WHERE row_num = 2;
+        '''
+        cursor.execute(query)
+        results.append(cursor.fetchall())
+        query = f'''
+            SELECT 
+                t.name_ru, 
+                t.name_en, 
+                (p24.people - p23.people) as people_growth
+            FROM territories t
+                JOIN population p24 ON t.id = p24.territory_id
+                JOIN population p23 ON t.id = p23.territory_id
+            WHERE p24.year = 2024 
+                    AND p23.year = 2023
+                    AND p24.gender = 'Total'
+                    AND p23.gender = 'Total'
+            ORDER BY people_growth DESC
+            LIMIT 1;
+        '''
+        cursor.execute(query)
+        results.append(cursor.fetchall())
+
+        conn.close()
+
+        return results
+

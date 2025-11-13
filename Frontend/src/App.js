@@ -41,6 +41,7 @@ function App() {
                     <BelarusDistrictTable
                         mode={tableMode}
                         onModeChange={handleTableModeChange}
+                        selectedLanguage={selectedLanguage}
                     />
                 )}
             </div>

@@ -75,3 +75,23 @@
   background: #4299e1;
   color: white;
 }
+
+.tab-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.tab-link {
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    color: #1a365d;
+    text-decoration: none;
+    background: #f1f5f9;
+    transition: background 0.2s, color 0.2s;
+    font-weight: 500;
+}
+
+.tab-link.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+}
