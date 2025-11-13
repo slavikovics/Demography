@@ -1,0 +1,77 @@
+.header-controls {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  flex-wrap: wrap;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  margin: 0 2rem; /* Отступы слева и справа */
+  height: 50px;
+  box-sizing: border-box; /* Чтобы padding не увеличивал ширину */
+}
+
+.comboBox-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  position: relative;
+}
+
+.comboBox-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -10px;
+  width: 2px;
+  height: 100%;
+  border-radius: 1px;
+  opacity: 0.7;
+}
+
+.comboBox {
+  border: none;
+  height: 40px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 
+    0 2px 8px rgba(0, 0, 0, 0.1);
+  min-width: 200px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.comboBox:hover {
+  transform: translateY(-2px);
+}
+
+.comboBox:hover::before {
+  left: 100%;
+}
+
+.comboBox:focus {
+  outline: none;
+  box-shadow: 
+    0 0 0 3px rgba(66, 153, 225, 0.3),
+    0 4px 15px rgba(0, 0, 0, 0.15);
+  border-color: #4299e1;
+}
+
+/* Стиль для выпадающего списка */
+.comboBox option {
+  background: white;
+  color: #2d3748;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.comboBox option:hover {
+  background: #4299e1;
+  color: white;
+}

@@ -22,6 +22,8 @@ services:
       dockerfile: Dockerfile
     ports:
       - "3001:3001"
+    volumes:
+      - ./src:/app/src
     depends_on:
       - backend
     environment:
