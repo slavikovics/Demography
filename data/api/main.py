@@ -82,17 +82,21 @@ async def get_available_territories():
 
 @app.get("/population_table/")
 async def get_population_table(
+        year: int = Query(...),
+        model: Optional[str] = Query('historical'),
         sort_by: Optional[str] = Query(None, description="Sort by field"),
         sorting_direction: Optional[str] = Query("asc", description="Sorting direction: 'asc' or 'desc'")
 ):
     try:
-        population_table = db.get_population_table(sort_by, sorting_direction)
+        if year <= 2024:
+            model = 'historical'
+
+        population_table = db.get_population_table(year, model, sort_by, sorting_direction)
         records = []
         for record_tuple in population_table:
             record = TableRecord.from_tuple(record_tuple)
             records.append(record)
 
-        # Возвращаем словари для корректной сериализации в JSON
         return [record.to_dict() for record in records]
 
     except Exception as e:
@@ -108,9 +112,14 @@ async def get_population_table_fields():
         raise HTTPException(status_code=500, detail=f"Internal server error: {str(e)}")
 
 @app.get("/population_table/interesting_data")
-async def get_interesting_data():
+async def get_interesting_data(
+        year: int = Query(...),
+        model: Optional[str] = Query('historical')):
     try:
-        fields = db.get_interesting_data()
+        if year <= 2024:
+            model = 'historical'
+
+        fields = db.get_interesting_data(year, model)
         return {"fields": fields}
     except Exception as e:
         print(e)

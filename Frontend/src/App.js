@@ -42,13 +42,13 @@ function App() {
                         mode={tableMode}
                         onModeChange={handleTableModeChange}
                         selectedLanguage={selectedLanguage}
+                        year={year}
+                        selectedModel={selectedModel}
                     />
                 )}
             </div>
-            <footer className='year-slider-footer'>
-                {selectedTab === 'map' && (
-                    <YearSlider year={year} onYearChange={setYear}/>
-                )}
+            <footer className='year-slider-footer'> 
+                <YearSlider year={year} onYearChange={setYear}/>
             </footer>
         </div>
     );

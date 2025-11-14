@@ -81,14 +81,14 @@ class DemographyDatabase:
         """Получить доступные модели прогнозирования для территории"""
         return self.population_repo.get_available_models_for_territory(territory_id)
 
-    def get_population_table(self, sort_by, sorting_direction):
-        return self.population_repo.get_population_table(sort_by, sorting_direction)
+    def get_population_table(self, year, model, sort_by, sorting_direction):
+        return self.population_repo.get_population_table(year, model, sort_by, sorting_direction)
 
     def get_population_table_fields(self):
         return self.population_repo.get_population_table_fields()
 
-    def get_interesting_data(self):
-        return self.population_repo.get_interesting_data()
+    def get_interesting_data(self, year, model):
+        return self.population_repo.get_interesting_data(year, model)
     
     def export_to_csv(self, table_name: str, csv_path: str):
         import csv

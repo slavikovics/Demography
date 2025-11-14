@@ -12,7 +12,7 @@ export default function BelarusDistrictMap({ geoJson, year, language, selectedMo
   const [populationData, setPopulationData] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  const fetchPopulationData = useCallback(async (territoryId, year) => {
+  const fetchPopulationData = useCallback(async (territoryId, year, selectedModel) => {
     if (!territoryId) return;
     
     setLoading(true);
@@ -37,9 +37,9 @@ export default function BelarusDistrictMap({ geoJson, year, language, selectedMo
   useEffect(() => {
     if (selectedFeature) {
       const regionId = selectedFeature.properties.regionId;
-      fetchPopulationData(regionId, year);
+      fetchPopulationData(regionId, year, selectedModel);
     }
-  }, [year, selectedFeature, fetchPopulationData]);
+  }, [year, selectedFeature, selectedModel, fetchPopulationData]);
 
   const handleFeatureSelect = (feature) => {
     setSelectedFeature(feature);

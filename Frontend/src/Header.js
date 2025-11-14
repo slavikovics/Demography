@@ -14,7 +14,10 @@ function Header({ selectedLanguage, onLanguageChange, selectedModel, onModelChan
             exponential: "Экспоненциальное сглаживание",
             // Языки
             russian: "Русский",
-            english: "English"
+            english: "English",
+            // Навигация
+            map: "Карта",
+            table: "Таблица"
         },
         english: {
             title: "Belarusian Demography",
@@ -26,7 +29,10 @@ function Header({ selectedLanguage, onLanguageChange, selectedModel, onModelChan
             exponential: "Exponential Smoothing",
             // Языки
             russian: "Russian",
-            english: "English"
+            english: "English",
+            // Навигация
+            map: "Map",
+            table: "Table"
         }
     };
 
@@ -44,47 +50,60 @@ function Header({ selectedLanguage, onLanguageChange, selectedModel, onModelChan
         {value: 'exponential', label: t.exponential}
     ];
 
-    const tabs = [
-        {value: 'map', label: t.map || 'Map'},
-        {value: 'table', label: t.table || 'Table'}
-    ];
-
     return (
         <header className="App-header">
             <h2 className="HeaderTitle">{t.title}</h2>
+            
             <div className="header-controls">
                 <div className="comboBox-container compact">
-                    <select id="language-select" className="comboBox compact" value={selectedLanguage} onChange={onLanguageChange}>
+                    <select 
+                        id="language-select" 
+                        className="comboBox compact" 
+                        value={selectedLanguage} 
+                        onChange={onLanguageChange}
+                    >
                         {languages.map(lang => (
-                            <option key={lang.value} value={lang.value}>{lang.label}</option>
+                            <option key={lang.value} value={lang.value}>
+                                {lang.label}
+                            </option>
                         ))}
                     </select>
                 </div>
+
                 <div className="comboBox-container compact">
-                    <select id="model-select" className="comboBox compact" value={selectedModel} onChange={onModelChange}>
+                    <select 
+                        id="model-select" 
+                        className="comboBox compact" 
+                        value={selectedModel} 
+                        onChange={onModelChange}
+                    >
                         {models.map(model => (
-                            <option key={model.value} value={model.value}>{model.label}</option>
+                            <option key={model.value} value={model.value}>
+                                {model.label}
+                            </option>
                         ))}
                     </select>
-                </div>
-                <div className="tab-links">
-                    {tabs.map(tab => (
-                        <a
-                            key={tab.value}
-                            href="#"
-                            className={`tab-link${selectedTab === tab.value ? ' active' : ''}`}
-                            onClick={e => {
-                                e.preventDefault();
-                                onTabChange({ target: { value: tab.value } });
-                            }}
-                        >
-                            {tab.label}
-                        </a>
-                    ))}
                 </div>
             </div>
-            <a className="Header-item" href="https://github.com/slavikovics/Demography">{t.github}</a>
-            <a className="Header-item" href="https://dataportal.belstat.gov.by/osids/home-page">{t.belstat}</a>
+
+            <div className="header-links">
+                <a
+                    href="#"
+                    className="Header-item"
+                    onClick={(e) => {
+                        e.preventDefault();
+                        onTabChange({ target: { value: selectedTab === 'map' ? 'table' : 'map' } });
+                    }}
+                >
+                    {selectedTab === 'map' ? t.table : t.map}
+                </a>
+                <a className="Header-item" href="https://github.com/slavikovics/Demography" target="_blank" rel="noopener noreferrer">
+                    {t.github}
+                </a>
+                <a className="Header-item" href="https://dataportal.belstat.gov.by/osids/home-page" target="_blank" rel="noopener noreferrer">
+                    {t.belstat}
+                </a>
+            </div>
         </header>
     );
 }

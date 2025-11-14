@@ -88,7 +88,7 @@ class PopulationRepository:
     def get_population_table_fields(self):
         return ['id', 'name_ru', 'name_en', 'people']
 
-    def get_population_table(self, sort_by, sorting_direction):
+    def get_population_table(self, year, model, sort_by, sorting_direction):
         # Валидация параметров для защиты от SQL-инъекций
         allowed_columns = ['id', 'name_ru', 'name_en', 'people']
         allowed_directions = ['ASC', 'DESC']
@@ -101,12 +101,12 @@ class PopulationRepository:
         conn = sqlite3.connect(self.db_path)
         cursor = conn.cursor()
 
-        # Используем f-строку для имен столбцов, но с валидацией
         query = f'''
             SELECT population.id AS id, name_ru, name_en, people
             FROM population
             JOIN territories ON population.territory_id = territories.id
-            WHERE year = 2024 AND gender = 'Total'
+            WHERE year = {year} AND gender = 'Total'
+            AND model = '{model}'
             ORDER BY {sort_by} {sorting_direction}
         '''
 
@@ -121,7 +121,7 @@ class PopulationRepository:
 
         return results
 
-    def get_interesting_data(self):
+    def get_interesting_data(self, year, model):
         results = []
         conn = sqlite3.connect(self.db_path)
         cursor = conn.cursor()
@@ -129,7 +129,7 @@ class PopulationRepository:
             SELECT name_ru, name_en, people
             FROM population
             JOIN territories ON population.territory_id = territories.id
-            WHERE year = 2024 AND gender = 'Total'
+            WHERE year = {year} AND gender = 'Total' AND model = '{model}'
             ORDER BY people ASC
             LIMIT 1
         '''
@@ -145,12 +145,18 @@ class PopulationRepository:
                     RANK() OVER (ORDER BY p.people DESC) as rank
                 FROM population p
                 JOIN territories t ON p.territory_id = t.id
-                WHERE p.year = 2024 AND p.gender = 'Total'
+                WHERE year = {year} AND gender = 'Total' AND model = '{model}'
             ) ranked
             WHERE rank = 2;
         '''
         cursor.execute(query)
         results.append(cursor.fetchall())
+
+        prev_year = year - 1
+        prev_year_model = model
+        if prev_year <= 2024:
+            prev_year_model = 'historical'
+
         query = f'''
             SELECT name_ru, name_en, people_growth
             FROM (
@@ -162,10 +168,12 @@ class PopulationRepository:
                 FROM territories t
                     JOIN population p24 ON t.id = p24.territory_id
                     JOIN population p23 ON t.id = p23.territory_id
-                WHERE p24.year = 2024 
-                        AND p23.year = 2023
+                WHERE p24.year = {year} 
+                        AND p23.year = {prev_year}
                         AND p24.gender = 'Total'
                         AND p23.gender = 'Total'
+                        AND p23.model = '{prev_year_model}'
+                        AND p24.model = '{model}'
             ) ranked
             WHERE row_num = 2;
         '''
@@ -179,10 +187,12 @@ class PopulationRepository:
             FROM territories t
                 JOIN population p24 ON t.id = p24.territory_id
                 JOIN population p23 ON t.id = p23.territory_id
-            WHERE p24.year = 2024 
-                    AND p23.year = 2023
+            WHERE p24.year = {year} 
+                    AND p23.year = {prev_year}
                     AND p24.gender = 'Total'
                     AND p23.gender = 'Total'
+                    AND p23.model = '{prev_year_model}'
+                    AND p24.model = '{model}'
             ORDER BY people_growth DESC
             LIMIT 1;
         '''

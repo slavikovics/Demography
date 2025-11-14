@@ -1,52 +1,52 @@
 import React, {useState, useEffect} from 'react';
+import './BelarusDistrictTable.css';
 
-const HEADER_HEIGHT = 40;
-const FOOTER_HEIGHT = 0;
 const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000';
 
-function BelarusDistrictTable({selectedLanguage}) {
-    const [fields, setFields] = useState([]);
+function BelarusDistrictTable({selectedLanguage, year, selectedModel}) {
     const [data, setData] = useState([]);
-    const [sortBy, setSortBy] = useState(null);
-    const [sortOrder, setSortOrder] = useState('asc');
+    const [sortBy, setSortBy] = useState('people');
+    const [sortOrder, setSortOrder] = useState('desc');
     const [loading, setLoading] = useState(false);
     const [interesting, setInteresting] = useState([]);
 
-    useEffect(() => {
-        fetch(`${apiUrl}/population_table/fields`)
-            .then(res => res.json())
-            .then(res => {
-                const fieldArr = res.fields || [];
-                setFields(fieldArr);
-                if (fieldArr.length > 0) setSortBy(fieldArr[0]);
-            });
-    }, []);
+    // Статические колонки
+    const fields = [
+        { key: 'id', labelRu: 'ID', labelEn: 'ID' },
+        { key: 'name_ru', labelRu: 'Название', labelEn: 'Name' },
+        { key: 'name_en', labelRu: 'Название (англ.)', labelEn: 'Name (English)' },
+        { key: 'people', labelRu: 'Население', labelEn: 'Population' }
+    ];
 
     useEffect(() => {
         if (!sortBy) return;
         setLoading(true);
-        fetch(`${apiUrl}/population_table/?sort_by=${sortBy}&sorting_direction=${sortOrder}`)
+        fetch(`${apiUrl}/population_table/?year=${year}&model=${selectedModel}&sort_by=${sortBy}&sorting_direction=${sortOrder}`)
             .then(res => res.json())
             .then(res => {
                 setData(res);
                 setLoading(false);
             })
             .catch(() => setLoading(false));
-    }, [sortBy, sortOrder]);
+    }, [sortBy, sortOrder, year, selectedModel]);
 
     useEffect(() => {
-        fetch(`${apiUrl}/population_table/interesting_data`)
+        fetch(`${apiUrl}/population_table/interesting_data/?year=${year}&model=${selectedModel}`)
             .then(res => res.json())
             .then(res => setInteresting(res.fields || []));
-    }, []);
+    }, [year, selectedModel]);
 
-    const handleSort = (field) => {
-        if (sortBy === field) {
+    const handleSort = (fieldKey) => {
+        if (sortBy === fieldKey) {
             setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc');
         } else {
-            setSortBy(field);
+            setSortBy(fieldKey);
             setSortOrder('asc');
         }
+    };
+
+    const getFieldLabel = (field) => {
+        return selectedLanguage === 'english' ? field.labelEn : field.labelRu;
     };
 
     const labels = {
@@ -69,143 +69,96 @@ function BelarusDistrictTable({selectedLanguage}) {
     const langIdx = selectedLanguage === 'english' ? 1 : 0;
 
     return (
-        <div
-            style={{
-                marginTop: HEADER_HEIGHT,
-                height: `calc(100vh - ${HEADER_HEIGHT}px - ${FOOTER_HEIGHT}px)`,
-                width: '100%',
-                display: 'flex',
-                flexDirection: 'row',
-                justifyContent: 'flex-start', // <-- FIX
-                boxSizing: 'border-box',
-                alignItems: 'flex-start'
-            }}
-        >
+        <div className="table-page-container">
+            <div className="table-main-container">
+                {/* Sidebar with interesting data */}
+                <div className="table-sidebar">
+                    <h3>{t.interesting}</h3>
+                    {interesting.length === 4 ? (
+                        <>
+                            <div className="data-item">
+                                <strong>{t.min}:</strong><br/>
+                                {interesting[0][0] && (
+                                    <span>
+                                        {interesting[0][0][langIdx]} : {interesting[0][0][2]}
+                                    </span>
+                                )}
+                            </div>
+                            <div className="data-item">
+                                <strong>{t.max}:</strong><br/>
+                                {interesting[1][0] && (
+                                    <span>
+                                        {interesting[1][0][langIdx]} : {interesting[1][0][2]}
+                                    </span>
+                                )}
+                            </div>
+                            <div className="data-item">
+                                <strong>{t.lowGrowth}:</strong><br/>
+                                {interesting[2][0] && (
+                                    <span>
+                                        {interesting[2][0][langIdx]} : {interesting[2][0][2]}
+                                    </span>
+                                )}
+                            </div>
+                            <div className="data-item">
+                                <strong>{t.highGrowth}:</strong><br/>
+                                {interesting[3][0] && (
+                                    <span>
+                                        {interesting[3][0][langIdx]} : {interesting[3][0][2]}
+                                    </span>
+                                )}
+                            </div>
+                        </>
+                    ) : (
+                        <span>Loading...</span>
+                    )}
+                </div>
 
-
-        {/* Sidebar with interesting data */}
-            <div style={{
-                flexBasis: '25%',
-                maxWidth: '25%',
-                background: '#f8fafc',
-                borderRadius: '12px',
-                margin: '2rem 0 2rem 2rem',
-                padding: '1.5rem',
-                boxShadow: '0 2px 12px rgba(0,0,0,0.07)',
-                fontSize: '1rem',
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '1.2rem'
-            }}>
-                <h3 style={{marginBottom: '1rem'}}>{t.interesting}</h3>
-                {interesting.length === 4 ? (
-                    <>
-                        <div>
-                            <strong>{t.min}:</strong><br/>
-                            {interesting[0][0] && (
-                                <span>
-                  {interesting[0][0][langIdx]} : {interesting[0][0][2]}
-                </span>
-                            )}
-                        </div>
-                        <div>
-                            <strong>{t.max}:</strong><br/>
-                            {interesting[1][0] && (
-                                <span>
-                  {interesting[1][0][langIdx]} : {interesting[1][0][2]}
-                </span>
-                            )}
-                        </div>
-                        <div>
-                            <strong>{t.lowGrowth}:</strong><br/>
-                            {interesting[2][0] && (
-                                <span>
-                  {interesting[2][0][langIdx]} : {interesting[2][0][2]}
-                </span>
-                            )}
-                        </div>
-                        <div>
-                            <strong>{t.highGrowth}:</strong><br/>
-                            {interesting[3][0] && (
-                                <span>
-                  {interesting[3][0][langIdx]} : {interesting[3][0][2]}
-                </span>
-                            )}
-                        </div>
-                    </>
-                ) : (
-                    <span>Loading...</span>
-                )}
-            </div>
-            {/* Table aligned right */}
-            <div style={{
-                flexBasis: '75%',
-                maxWidth: '75%',
-                marginLeft: 'auto',        // <-- FIX: это правильно прижмёт блок вправо
-                display: 'flex',
-                alignItems: 'center',      // Center vertically
-                justifyContent: 'center',  // Center horizontally
-                height: '100%',
-            }}>
-                <div
-                    style={{
-                        padding: '2.5rem',
-                        background: 'white',
-                        borderRadius: '12px',
-                        margin: '2.2rem 2rem 2.2rem 0', // было OK, но можно сделать margin: '2.2rem'
-                        height: '100%',
-                        display: 'flex',
-                        flexDirection: 'column',
-                        boxSizing: 'border-box'
-                    }}
-                >
-                    <div style={{flex: 1, overflow: 'auto', width: '150%', margin: '0 auto'}}>
-                        <table style={{width: '100%', borderCollapse: 'collapse'}}>
-                            <thead>
-                            <tr>
-                                {fields.map(col => (
-                                    <th
-                                        key={col}
-                                        onClick={() => handleSort(col)}
-                                        style={{
-                                            cursor: 'pointer',
-                                            padding: '10px',
-                                            background: '#f8fafc',
-                                            borderBottom: '2px solid #e2e8f0',
-                                            position: 'sticky',
-                                            top: 0,
-                                            zIndex: 2
-                                        }}
-                                    >
-                                        {col.replace('_', ' ').replace('people', 'Население').replace('name', 'Название')}
-                                        {sortBy === col ? (sortOrder === 'asc' ? ' ▲' : ' ▼') : ''}
-                                    </th>
-                                ))}
-                            </tr>
-                            </thead>
-                            <tbody>
-                            {loading ? (
-                                <tr>
-                                    <td colSpan={fields.length}
-                                        style={{textAlign: 'center', padding: '30px'}}>Loading...
-                                    </td>
-                                </tr>
-                            ) : (
-                                data.map((row, idx) => (
-                                    <tr
-                                        key={idx}
-                                        style={{
-                                            background: idx % 2 === 0 ? '#fff' : '#f3f4f6'
-                                        }}
-                                    >
-                                        {fields.map(col => (
-                                            <td key={col}>{row[col]}</td>
+                {/* Main table content */}
+                <div className="table-content-area">
+                    <div className="table-wrapper">
+                        <div className="table-scroll-container">
+                            <table className="data-table">
+                                <thead>
+                                    <tr>
+                                        {fields.map(field => (
+                                            <th
+                                                key={field.key}
+                                                onClick={() => handleSort(field.key)}
+                                                className="table-header"
+                                            >
+                                                {getFieldLabel(field)}
+                                                {sortBy === field.key ? (sortOrder === 'asc' ? ' ▲' : ' ▼') : ''}
+                                            </th>
                                         ))}
                                     </tr>
-                                ))
-                            )}
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tbody>
+                                    {loading ? (
+                                        <tr>
+                                            <td colSpan={fields.length} className="loading-cell">
+                                                Loading...
+                                            </td>
+                                        </tr>
+                                    ) : (
+                                        data.map((row, idx) => (
+                                            <tr
+                                                key={idx}
+                                                className={idx % 2 === 0 ? 'even-row' : 'odd-row'}
+                                            >
+                                                {fields.map(field => (
+                                                    <td key={field.key}>
+                                                        {field.key === 'people' && row[field.key] 
+                                                            ? row[field.key].toLocaleString() 
+                                                            : row[field.key]}
+                                                    </td>
+                                                ))}
+                                            </tr>
+                                        ))
+                                    )}
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>

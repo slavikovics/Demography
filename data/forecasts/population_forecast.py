@@ -98,12 +98,10 @@ def create_exponential_forecast(db, territory_id, gender='Total', years_to_forec
     population_series = df['population'].values
 
     try:
-        # Используем простую модель экспоненциального сглаживания
         model = ExponentialSmoothing(population_series, trend='add', seasonal=None)
         model_fit = model.fit()
         forecast = model_fit.forecast(steps=years_to_forecast)
     except:
-        # Если сложная модель не работает, используем простое среднее
         forecast = [np.mean(population_series)] * years_to_forecast
 
     future_years = [end_year + i for i in range(1, years_to_forecast + 1)]
