@@ -7,18 +7,18 @@ import CountryOverview from "./CountryOverview";
 
 const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000';
 
-export default function BelarusDistrictMap({ geoJson, year }) {
+export default function BelarusDistrictMap({ geoJson, year, language, selectedModel }) {
   const [selectedFeature, setSelectedFeature] = useState(null);
   const [populationData, setPopulationData] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  const fetchPopulationData = useCallback(async (territoryId, year) => {
+  const fetchPopulationData = useCallback(async (territoryId, year, selectedModel) => {
     if (!territoryId) return;
     
     setLoading(true);
     try {
       const response = await fetch(
-        `${apiUrl}/population/?territory_id=${territoryId}&year=${year}`
+        `${apiUrl}/population/?territory_id=${territoryId}&year=${year}&model=${selectedModel}`
       );
       if (response.ok) {
         const data = await response.json();
@@ -37,9 +37,9 @@ export default function BelarusDistrictMap({ geoJson, year }) {
   useEffect(() => {
     if (selectedFeature) {
       const regionId = selectedFeature.properties.regionId;
-      fetchPopulationData(regionId, year);
+      fetchPopulationData(regionId, year, selectedModel);
     }
-  }, [year, selectedFeature, fetchPopulationData]);
+  }, [year, selectedFeature, selectedModel, fetchPopulationData]);
 
   const handleFeatureSelect = (feature) => {
     setSelectedFeature(feature);
@@ -77,9 +77,13 @@ export default function BelarusDistrictMap({ geoJson, year }) {
         loading={loading}
         year={year}
         onClose={handlePopupClose}
+        language={language}
+        selectedModel={selectedModel}
       />
 
-      <CountryOverview year={year} />
+      <CountryOverview year={year} 
+                       language={language}
+                       selectedModel={selectedModel} />
     </MapContainer>
   );
 }

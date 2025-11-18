@@ -10,7 +10,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Zhlobin",
+        "shapeName": "Zhlobin district",
+        "shapeNameRu": "Жлобинский",
         "shapeISO": "",
         "regionId": 919130,
         "shapeID": "67162791B87321103764300",
@@ -1020,7 +1021,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Vitebsk",
+        "shapeName": "Vitebsk district",
+        "shapeNameRu": "Витебский",
         "shapeISO": "",
         "regionId": 919099,
         "shapeID": "67162791B85815486219336",
@@ -2174,7 +2176,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Grodno",
+        "shapeName": "Grodno district",
+        "shapeNameRu": "Гродненский",
         "shapeISO": "",
         "regionId": 919150,
         "shapeID": "67162791B13547290723272",
@@ -3080,7 +3083,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Brest",
+        "shapeName": "Brest district",
+        "shapeNameRu": "Брестский",
         "shapeISO": "",
         "regionId": 919077,
         "shapeID": "67162791B30498032594927",
@@ -4138,7 +4142,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Bykhaw",
+        "shapeName": "Bykhov district",
+        "shapeNameRu": "Быховский",
         "shapeISO": "",
         "regionId": 919204,
         "shapeID": "67162791B64614066939299",
@@ -5060,7 +5065,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Dzyarzhynsk",
+        "shapeName": "Dzerzhinsk district",
+        "shapeNameRu": "Дзержинский",
         "shapeISO": "",
         "regionId": 919181,
         "shapeID": "67162791B81421428715601",
@@ -5918,7 +5924,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Minsk City",
+        "shapeName": "Minsk city",
+        "shapeNameRu": "г. Минск",
         "shapeISO": "",
         "regionId": 919071,
         "shapeID": "67162791B57724394311820",
@@ -6140,7 +6147,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Astravyets",
+        "shapeName": "Ostrovets district",
+        "shapeNameRu": "Островецкий",
         "shapeISO": "",
         "regionId": 919158,
         "shapeID": "67162791B54270193950847",
@@ -6722,7 +6730,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Smarhon",
+        "shapeName": "Smorgon district",
+        "shapeNameRu": "Сморгонский",
         "shapeISO": "",
         "regionId": 919162,
         "shapeID": "67162791B9257777977100",
@@ -7492,7 +7501,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Ashmyany",
+        "shapeName": "Oshmyany district",
+        "shapeNameRu": "Ошмянский",
         "shapeISO": "",
         "regionId": 919159,
         "shapeID": "67162791B18933715013959",
@@ -8038,7 +8048,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Voranava",
+        "shapeName": "Voronovo district",
+        "shapeNameRu": "Вороновский",
         "shapeISO": "",
         "regionId": 919149,
         "shapeID": "67162791B43104058935452",
@@ -8852,7 +8863,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Iwye",
+        "shapeName": "Ivye district",
+        "shapeNameRu": "Ивьевский",
         "shapeISO": "",
         "regionId": 919153,
         "shapeID": "67162791B89656925241953",
@@ -9650,7 +9662,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Karelichy",
+        "shapeName": "Korelichy district",
+        "shapeNameRu": "Кореличский",
         "shapeISO": "",
         "regionId": 919154,
         "shapeID": "67162791B39609385147896",
@@ -10064,7 +10077,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Novogrudok",
+        "shapeName": "Novogrudok district",
+        "shapeNameRu": "Новогрудский",
         "shapeISO": "",
         "regionId": 919157,
         "shapeID": "67162791B21439902878143",
@@ -10966,7 +10980,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Lida",
+        "shapeName": "Lida district",
+        "shapeNameRu": "Лидский",
         "shapeISO": "",
         "regionId": 919155,
         "shapeID": "67162791B46145411949360",
@@ -11852,7 +11867,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Dzyatlava",
+        "shapeName": "Dyatlovo district",
+        "shapeNameRu": "Дятловский",
         "shapeISO": "",
         "regionId": 919151,
         "shapeID": "67162791B37208014069458",
@@ -12638,7 +12654,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Slonim",
+        "shapeName": "Slonim district",
+        "shapeNameRu": "Слонимский",
         "shapeISO": "",
         "regionId": 919161,
         "shapeID": "67162791B56929358145249",
@@ -13540,7 +13557,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Zel'va",
+        "shapeName": "Zelva district",
+        "shapeNameRu": "Зельвенский",
         "shapeISO": "",
         "regionId": 919152,
         "shapeID": "67162791B91505134452571",
@@ -14298,7 +14316,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Svislach",
+        "shapeName": "Svisloch district",
+        "shapeNameRu": "Свислочский",
         "shapeISO": "",
         "regionId": 919160,
         "shapeID": "67162791B1668576645583",
@@ -14912,7 +14931,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Vawkavysk",
+        "shapeName": "Volkovysk district",
+        "shapeNameRu": "Волковысский",
         "shapeISO": "",
         "regionId": 919148,
         "shapeID": "67162791B87198261111694",
@@ -15734,7 +15754,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Byerastavitsa",
+        "shapeName": "Berestovitsa district",
+        "shapeNameRu": "Берестовицкий",
         "shapeISO": "",
         "regionId": 919147,
         "shapeID": "67162791B90230438084188",
@@ -16256,7 +16277,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Masty",
+        "shapeName": "Mosty district",
+        "shapeNameRu": "Мостовский",
         "shapeISO": "",
         "regionId": 919156,
         "shapeID": "67162791B96733958179229",
@@ -17310,7 +17332,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Shchuchyn",
+        "shapeName": "Shchuchin district",
+        "shapeNameRu": "Щучинский",
         "shapeISO": "",
         "regionId": 919163,
         "shapeID": "67162791B66420794580046",
@@ -18244,7 +18267,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Lyelchytsy",
+        "shapeName": "Lelchitsy district",
+        "shapeNameRu": "Лельчицкий",
         "shapeISO": "",
         "regionId": 919133,
         "shapeID": "67162791B62905803070856",
@@ -18998,7 +19022,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Zhytkavichy",
+        "shapeName": "Zhitkovichy district",
+        "shapeNameRu": "Житковичский",
         "shapeISO": "",
         "regionId": 919129,
         "shapeID": "67162791B281573745440",
@@ -19948,7 +19973,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Akciabrski",
+        "shapeName": "Oktyabrsky district",
+        "shapeNameRu": "Октябрьский",
         "shapeISO": "",
         "regionId": 919137,
         "shapeID": "67162791B76840313346110",
@@ -20790,7 +20816,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Pyetrykaw",
+        "shapeName": "Petrikov district",
+        "shapeNameRu": "Петриковский",
         "shapeISO": "",
         "regionId": 919138,
         "shapeID": "67162791B78152292733501",
@@ -21888,7 +21915,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Vietka",
+        "shapeName": "Vetka district",
+        "shapeNameRu": "Ветковский",
         "shapeISO": "",
         "regionId": 919125,
         "shapeID": "67162791B72598168140482",
@@ -22478,7 +22506,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Dobrush",
+        "shapeName": "Dobrush district",
+        "shapeNameRu": "Добрушский",
         "shapeISO": "",
         "regionId": 919127,
         "shapeID": "67162791B17030122378697",
@@ -23220,7 +23249,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Gomel",
+        "shapeName": "Gomel district",
+        "shapeNameRu": "Гомельский",
         "shapeISO": "",
         "regionId": 919126,
         "shapeID": "67162791B13261784360532",
@@ -24122,7 +24152,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Chachersk",
+        "shapeName": "Chechersk district",
+        "shapeNameRu": "Чечерский",
         "shapeISO": "",
         "regionId": 919143,
         "shapeID": "67162791B26710857863794",
@@ -24884,7 +24915,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Karma",
+        "shapeName": "Korma district",
+        "shapeNameRu": "Кормянский",
         "shapeISO": "",
         "regionId": 919132,
         "shapeID": "67162791B17316516711258",
@@ -25458,7 +25490,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Rahachow",
+        "shapeName": "Rogachev district",
+        "shapeNameRu": "Рогачевский",
         "shapeISO": "",
         "regionId": 919140,
         "shapeID": "67162791B93010244041694",
@@ -26464,7 +26497,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Buda-Kashalyova",
+        "shapeName": "Buda-Koshelyovo district",
+        "shapeNameRu": "Буда-Кошелевский",
         "shapeISO": "",
         "regionId": 919124,
         "shapeID": "67162791B74774527984565",
@@ -27338,7 +27372,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Naroulia",
+        "shapeName": "Narovlya district",
+        "shapeNameRu": "Наровлянский",
         "shapeISO": "",
         "regionId": 919136,
         "shapeID": "67162791B29889808776469",
@@ -28040,7 +28075,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Mazyr",
+        "shapeName": "Mozyr district",
+        "shapeNameRu": "Мозырский",
         "shapeISO": "",
         "regionId": 919135,
         "shapeID": "67162791B88851399193905",
@@ -29102,7 +29138,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Rechytsa",
+        "shapeName": "Rechitsa district",
+        "shapeNameRu": "Речицкий",
         "shapeISO": "",
         "regionId": 919139,
         "shapeID": "67162791B36955231142498",
@@ -30260,7 +30297,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Svietlahorsk",
+        "shapeName": "Svetlogorsk district",
+        "shapeNameRu": "Светлогорский",
         "shapeISO": "",
         "regionId": 919141,
         "shapeID": "67162791B63369954237676",
@@ -31398,7 +31436,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Brahin",
+        "shapeName": "Bragin district",
+        "shapeNameRu": "Брагинский",
         "shapeISO": "",
         "regionId": 919123,
         "shapeID": "67162791B77344314095023",
@@ -32300,7 +32339,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Yelʹsk",
+        "shapeName": "Yelsk district",
+        "shapeNameRu": "Ельский",
         "shapeISO": "",
         "regionId": 919128,
         "shapeID": "67162791B11100068414031",
@@ -33062,7 +33102,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Kalinkavichy",
+        "shapeName": "Kalinkovichy district",
+        "shapeNameRu": "Калинковичский",
         "shapeISO": "",
         "regionId": 919131,
         "shapeID": "67162791B95934163913722",
@@ -34304,7 +34345,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Khoiniki",
+        "shapeName": "Khoyniki district",
+        "shapeNameRu": "Хойникский",
         "shapeISO": "",
         "regionId": 919142,
         "shapeID": "67162791B63950130624576",
@@ -35214,7 +35256,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Loyew",
+        "shapeName": "Loyev district",
+        "shapeNameRu": "Лоевский",
         "shapeISO": "",
         "regionId": 919134,
         "shapeID": "67162791B2494752626310",
@@ -35948,7 +35991,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Stolin",
+        "shapeName": "Stolin district",
+        "shapeNameRu": "Столинский",
         "shapeISO": "",
         "regionId": 919090,
         "shapeID": "67162791B20391469538668",
@@ -36942,7 +36986,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Luninets",
+        "shapeName": "Luninets district",
+        "shapeNameRu": "Лунинецкий",
         "shapeISO": "",
         "regionId": 919085,
         "shapeID": "67162791B41216407156673",
@@ -37924,7 +37969,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Pinsk",
+        "shapeName": "Pinsk district",
+        "shapeNameRu": "Пинский",
         "shapeISO": "",
         "regionId": 919088,
         "shapeID": "67162791B61405599198646",
@@ -39210,7 +39256,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Hantsavichy",
+        "shapeName": "Gantsevichy district",
+        "shapeNameRu": "Ганцевичский",
         "shapeISO": "",
         "regionId": 919078,
         "shapeID": "67162791B6713137002494",
@@ -39964,7 +40011,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Baranovichy",
+        "shapeName": "Baranovichy district",
+        "shapeNameRu": "Барановичский",
         "shapeISO": "",
         "regionId": 919075,
         "shapeID": "67162791B97838850570601",
@@ -40834,7 +40882,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Byaroza",
+        "shapeName": "Bereza district",
+        "shapeNameRu": "Берёзовский",
         "shapeISO": "",
         "regionId": 919076,
         "shapeID": "67162791B6222300561744",
@@ -41504,7 +41553,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Drahichyn",
+        "shapeName": "Drogichin district",
+        "shapeNameRu": "Дрогичинский",
         "shapeISO": "",
         "regionId": 919079,
         "shapeID": "67162791B13228782215285",
@@ -42350,7 +42400,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Ivanava",
+        "shapeName": "Ivanovo district",
+        "shapeNameRu": "Ивановский",
         "regionId": 919081,
         "shapeISO": "",
         "shapeID": "67162791B27498157405440",
@@ -43152,7 +43203,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Ivatsevichy",
+        "shapeName": "Ivatsevichy district",
+        "shapeNameRu": "Ивацевичский",
         "shapeISO": "",
         "regionId": 919082,
         "shapeID": "67162791B15775504283911",
@@ -44118,7 +44170,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Kamenets",
+        "shapeName": "Kamenets district",
+        "shapeNameRu": "Каменецкий",
         "shapeISO": "",
         "regionId": 919083,
         "shapeID": "67162791B59963656038120",
@@ -44912,7 +44965,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Kobryn",
+        "shapeName": "Kobrin district",
+        "shapeNameRu": "Кобринский",
         "shapeISO": "",
         "regionId": 919084,
         "shapeID": "67162791B1192676397695",
@@ -45854,7 +45908,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Lyakhavichy",
+        "shapeName": "Lyakhovichy district",
+        "shapeNameRu": "Ляховичский",
         "shapeISO": "",
         "regionId": 919086,
         "shapeID": "67162791B80813457147779",
@@ -46596,7 +46651,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Malaryta",
+        "shapeName": "Malorita district",
+        "shapeNameRu": "Малоритский",
         "shapeISO": "",
         "regionId": 919087,
         "shapeID": "67162791B17752609820062",
@@ -47254,7 +47310,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Pruzhany",
+        "shapeName": "Pruzhany district",
+        "shapeNameRu": "Пружанский",
         "shapeISO": "",
         "regionId": 919089,
         "shapeID": "67162791B13478011403583",
@@ -48436,7 +48493,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Zhabinka",
+        "shapeName": "Zhabinka district",
+        "shapeNameRu": "Жабинковский",
         "shapeISO": "",
         "regionId": 919080,
         "shapeID": "67162791B54933494059720",
@@ -49022,7 +49080,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Khotsimsk",
+        "shapeName": "Khotimsk district",
+        "shapeNameRu": "Хотимский",
         "shapeISO": "",
         "regionId": 919219,
         "shapeID": "67162791B11584975294724",
@@ -49468,7 +49527,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Kastsyukovichy",
+        "shapeName": "Kostyukovichy district",
+        "shapeNameRu": "Костюковичский",
         "shapeISO": "",
         "regionId": 919211,
         "shapeID": "67162791B14569635979911",
@@ -50058,7 +50118,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Krasnapolle",
+        "shapeName": "Krasnopolye district",
+        "shapeNameRu": "Краснопольский",
         "shapeISO": "",
         "regionId": 919212,
         "shapeID": "67162791B52564132020414",
@@ -50680,7 +50741,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Klimavichy",
+        "shapeName": "Klimovichy district",
+        "shapeNameRu": "Климовичский",
         "shapeISO": "",
         "regionId": 919209,
         "shapeID": "67162791B58533541453403",
@@ -51470,7 +51532,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Krychaw",
+        "shapeName": "Krichev district",
+        "shapeNameRu": "Кричевский",
         "shapeISO": "",
         "regionId": 919213,
         "shapeID": "67162791B56678014739115",
@@ -51976,7 +52039,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Cherykaw",
+        "shapeName": "Cherikov district",
+        "shapeNameRu": "Чериковский",
         "shapeISO": "",
         "regionId": 919221,
         "shapeID": "67162791B83279044546130",
@@ -52610,7 +52674,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Mstsislaw",
+        "shapeName": "Mstislavl district",
+        "shapeNameRu": "Мстиславский",
         "shapeISO": "",
         "regionId": 919216,
         "shapeID": "67162791B4778855273895",
@@ -53264,7 +53329,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Slawharad",
+        "shapeName": "Slavgorod district",
+        "shapeNameRu": "Славгородский",
         "shapeISO": "",
         "regionId": 919218,
         "shapeID": "67162791B95045439516357",
@@ -54046,7 +54112,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Horki",
+        "shapeName": "Gorki district",
+        "shapeNameRu": "Горецкий",
         "shapeISO": "",
         "regionId": 919206,
         "shapeID": "67162791B10713618148259",
@@ -55004,7 +55071,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Shklow",
+        "shapeName": "Shklov district",
+        "shapeNameRu": "Шкловский",
         "shapeISO": "",
         "regionId": 919222,
         "shapeID": "67162791B50878075194487",
@@ -55930,7 +55998,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Kruhlaye",
+        "shapeName": "Krugloyе district",
+        "shapeNameRu": "Круглянский",
         "shapeISO": "",
         "regionId": 919214,
         "shapeID": "67162791B94243355622129",
@@ -56468,7 +56537,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Chavusy",
+        "shapeName": "Chausy district",
+        "shapeNameRu": "Чаусский",
         "shapeISO": "",
         "regionId": 919220,
         "shapeID": "67162791B68481301764251",
@@ -57438,7 +57508,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Mogilev",
+        "shapeName": "Mogilev district",
+        "shapeNameRu": "Могилевский",
         "shapeISO": "",
         "regionId": 919215,
         "shapeID": "67162791B13586571917215",
@@ -58580,7 +58651,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Byalynichy",
+        "shapeName": "Belynichy district",
+        "shapeNameRu": "Белыничский",
         "shapeISO": "",
         "regionId": 919202,
         "shapeID": "67162791B99339401725810",
@@ -59454,7 +59526,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Hlusk",
+        "shapeName": "Kletsk district",
+        "shapeNameRu": "Клецкий",
         "shapeISO": "",
         "regionId": 919182,
         "shapeID": "67162791B26256964844328",
@@ -60208,7 +60281,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Babruysk",
+        "shapeName": "Bobruysk district",
+        "shapeNameRu": "Бобруйский",
         "regionId": 919203,
         "shapeISO": "",
         "shapeID": "67162791B49466941565536",
@@ -61274,7 +61348,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Asipovichy",
+        "shapeName": "Osipovichy district",
+        "shapeNameRu": "Осиповичский",
         "shapeISO": "",
         "regionId": 919217,
         "shapeID": "67162791B915008440335",
@@ -62276,7 +62351,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Kirawsk",
+        "shapeName": "Kirovsk district",
+        "shapeNameRu": "Кировский",
         "shapeISO": "",
         "regionId": 919208,
         "shapeID": "67162791B61593564131840",
@@ -63134,7 +63210,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Klichaw",
+        "shapeName": "Klichev district",
+        "shapeNameRu": "Кличевский",
         "shapeISO": "",
         "regionId": 919210,
         "shapeID": "67162791B97539600295477",
@@ -64060,7 +64137,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Beshankovichy",
+        "shapeName": "Beshenkovichy district",
+        "shapeNameRu": "Бешенковичский",
         "shapeISO": "",
         "regionId": 919096,
         "shapeID": "67162791B20127655381780",
@@ -65122,7 +65200,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Braslaw",
+        "shapeName": "Braslav district",
+        "shapeNameRu": "Браславский",
         "shapeISO": "",
         "regionId": 919097,
         "shapeID": "67162791B18102707107362",
@@ -65904,7 +65983,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Chashniki",
+        "shapeName": "Chashniki district",
+        "shapeNameRu": "Чашникский",
         "shapeISO": "",
         "regionId": 919114,
         "shapeID": "67162791B63587233546026",
@@ -66902,7 +66982,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Dokshytsy",
+        "shapeName": "Dokshitsy district",
+        "shapeNameRu": "Докшицкий",
         "shapeISO": "",
         "regionId": 919102,
         "shapeID": "67162791B61932293276792",
@@ -67748,7 +67829,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Dubrowna",
+        "shapeName": "Dubrovno district",
+        "shapeNameRu": "Дубровенский",
         "shapeISO": "",
         "regionId": 919103,
         "shapeID": "67162791B1773631612848",
@@ -68334,7 +68416,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Haradok",
+        "shapeName": "Gorodok district",
+        "shapeNameRu": "Городокский",
         "shapeISO": "",
         "regionId": 919101,
         "shapeID": "67162791B30546828632542",
@@ -69332,7 +69415,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Hlybokaye",
+        "shapeName": "Glubokoye district",
+        "shapeNameRu": "Глубокский",
         "shapeISO": "",
         "regionId": 919100,
         "shapeID": "67162791B12228546801080",
@@ -70326,7 +70410,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Lyepyel",
+        "shapeName": "Lepel district",
+        "shapeNameRu": "Лепельский",
         "shapeISO": "",
         "regionId": 919104,
         "shapeID": "67162791B29799454608156",
@@ -71328,7 +71413,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Liozna",
+        "shapeName": "Liozno district",
+        "shapeNameRu": "Лиозненский",
         "shapeISO": "",
         "regionId": 919105,
         "shapeID": "67162791B19917337499758",
@@ -71910,7 +71996,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Miory",
+        "shapeName": "Miory district",
+        "shapeNameRu": "Миорский",
         "regionId": 919106,
         "shapeISO": "",
         "shapeID": "67162791B84307245476990",
@@ -72748,7 +72835,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Orsha",
+        "shapeName": "Orsha district",
+        "shapeNameRu": "Оршанский",
         "shapeISO": "",
         "regionId": 919107,
         "shapeID": "67162791B52368794321360",
@@ -73802,7 +73890,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Pastavy",
+        "shapeName": "Postavy district",
+        "shapeNameRu": "Поставский",
         "shapeISO": "",
         "regionId": 919109,
         "shapeID": "67162791B41761210959552",
@@ -74764,7 +74853,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Polotsk",
+        "shapeName": "Polotsk district",
+        "shapeNameRu": "Полоцкий",
         "shapeISO": "",
         "regionId": 919108,
         "shapeID": "67162791B45929653886900",
@@ -75946,7 +76036,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Rasony",
+        "shapeName": "Rossony district",
+        "shapeNameRu": "Россонский",
         "shapeISO": "",
         "regionId": 919110,
         "shapeID": "67162791B65560195088656",
@@ -76756,7 +76847,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Sharkawshchyna",
+        "shapeName": "Sharkovshchina district",
+        "shapeNameRu": "Шарковщинский",
         "shapeISO": "",
         "regionId": 919115,
         "shapeID": "67162791B8322834804347",
@@ -77954,7 +78046,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Shumilina",
+        "shapeName": "Shumilino district",
+        "shapeNameRu": "Шумилинский",
         "shapeISO": "",
         "regionId": 919116,
         "shapeID": "67162791B70451788382486",
@@ -78716,7 +78809,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Syanno",
+        "shapeName": "Senno district",
+        "shapeNameRu": "Сенненский",
         "shapeISO": "",
         "regionId": 919111,
         "shapeID": "67162791B30203465956125",
@@ -79730,7 +79824,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Talachyn",
+        "shapeName": "Tolochin district",
+        "shapeNameRu": "Толочинский",
         "shapeISO": "",
         "regionId": 919112,
         "shapeID": "67162791B51675752120435",
@@ -80616,7 +80711,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Ushachy",
+        "shapeName": "Ushachy district",
+        "shapeNameRu": "Ушачский",
         "shapeISO": "",
         "regionId": 919113,
         "shapeID": "67162791B55947192119521",
@@ -81382,7 +81478,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Verkhnyadzvinsk",
+        "shapeName": "Verkhnedvinsk district",
+        "shapeNameRu": "Верхнедвинский",
         "shapeISO": "",
         "regionId": 919098,
         "shapeID": "67162791B82603429459213",
@@ -82272,7 +82369,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Myadzyel",
+        "shapeName": "Miadel district",
+        "shapeNameRu": "Мядельский",
         "shapeISO": "",
         "regionId": 919189,
         "shapeID": "67162791B89573771278316",
@@ -83310,7 +83408,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Vileyka",
+        "shapeName": "Vileyka district",
+        "shapeNameRu": "Вилейский",
         "shapeISO": "",
         "regionId": 919179,
         "shapeID": "67162791B71807573158689",
@@ -84624,7 +84723,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Valozhyn",
+        "shapeName": "Volozhin district",
+        "shapeNameRu": "Воложинский",
         "shapeISO": "",
         "regionId": 919180,
         "shapeID": "67162791B19881563690612",
@@ -85666,7 +85766,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Maladzyechna",
+        "shapeName": "Molodechno district",
+        "shapeNameRu": "Молодечненский",
         "shapeISO": "",
         "regionId": 919188,
         "shapeID": "67162791B22380901430791",
@@ -86488,7 +86589,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Barysaw",
+        "shapeName": "Borisov district",
+        "shapeNameRu": "Борисовский",
         "shapeISO": "",
         "regionId": 919178,
         "shapeID": "67162791B39606099444015",
@@ -87830,7 +87932,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Byerazino",
+        "shapeName": "Berezino district",
+        "shapeNameRu": "Березинский",
         "shapeISO": "",
         "regionId": 919177,
         "shapeID": "67162791B55727051267470",
@@ -88684,7 +88787,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Chervyen",
+        "shapeName": "Cherven district",
+        "shapeNameRu": "Червенский",
         "shapeISO": "",
         "regionId": 919198,
         "shapeID": "67162791B52884935059856",
@@ -89786,7 +89890,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Kapyl",
+        "shapeName": "Kopyl district",
+        "shapeNameRu": "Копыльский",
         "shapeISO": "",
         "regionId": 919183,
         "shapeID": "67162791B49789732024983",
@@ -90672,7 +90777,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Kletsk",
+        "shapeName": "Kletsk district",
+        "shapeNameRu": "Клецкий",
         "shapeISO": "",
         "regionId": 919182,
         "shapeID": "67162791B94687657655016",
@@ -91438,7 +91544,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Krupki",
+        "shapeName": "Krupki district",
+        "shapeNameRu": "Крупский",
         "shapeISO": "",
         "regionId": 919184,
         "shapeID": "67162791B85718992399445",
@@ -92472,7 +92579,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Lahoysk",
+        "shapeName": "Logoysk district",
+        "shapeNameRu": "Логойский",
         "shapeISO": "",
         "regionId": 919185,
         "shapeID": "67162791B73059269727639",
@@ -93606,7 +93714,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Lyuban",
+        "shapeName": "Lyuban district",
+        "shapeNameRu": "Любанский",
         "shapeISO": "",
         "regionId": 919186,
         "shapeID": "67162791B60458568388386",
@@ -94268,7 +94377,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Minsk",
+        "shapeName": "Minsk district",
+        "shapeNameRu": "Минский",
         "shapeISO": "",
         "regionId": 919187,
         "shapeID": "67162791B84471344127718",
@@ -95684,7 +95794,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Nyasvizh",
+        "shapeName": "Nesvizh district",
+        "shapeNameRu": "Несвижский",
         "shapeISO": "",
         "regionId": 919190,
         "shapeID": "67162791B10653728732828",
@@ -96318,7 +96429,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Puchavičy",
+        "shapeName": "Pukhovichy district",
+        "shapeNameRu": "Пуховичский",
         "shapeISO": "",
         "regionId": 919191,
         "shapeID": "67162791B58974730621112",
@@ -97676,7 +97788,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Slutsk",
+        "shapeName": "Slutsk district",
+        "shapeNameRu": "Слуцкий",
         "shapeISO": "",
         "regionId": 919192,
         "shapeID": "67162791B93573624741448",
@@ -98818,7 +98931,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Smalyavichy",
+        "shapeName": "Smolevichy district",
+        "shapeNameRu": "Смолевичский",
         "shapeISO": "",
         "regionId": 919193,
         "shapeID": "67162791B46914171064537",
@@ -99836,7 +99950,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Staryya Darohi",
+        "shapeName": "Staryie Dorogi district",
+        "shapeNameRu": "Стародорожский",
         "shapeISO": "",
         "regionId": 919195,
         "shapeID": "67162791B98065545782790",
@@ -100634,7 +100749,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Stowbtsy",
+        "shapeName": "Stolbtsy district",
+        "shapeNameRu": "Столбцовский",
         "shapeISO": "",
         "regionId": 919196,
         "shapeID": "67162791B19818766020383",
@@ -101492,7 +101608,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Uzda",
+        "shapeName": "Uzda district",
+        "shapeNameRu": "Узденский",
         "shapeISO": "",
         "regionId": 919197,
         "shapeID": "67162791B57084664446232",
@@ -102654,7 +102771,8 @@
     {
       "type": "Feature",
       "properties": {
-        "shapeName": "Salihorsk",
+        "shapeName": "Soligorsk district",
+        "shapeNameRu": "Солигорский",
         "shapeISO": "",
         "regionId": 919194,
         "shapeID": "67162791B12460087089540",

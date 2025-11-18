@@ -46,7 +46,7 @@ html, body, #root {
   font-size: 10px;
   color: #e2e8f0;
   text-decoration: none;
-  margin-left: 5%;
+  margin-left: 15%;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   font-weight: 500;
   position: relative;
