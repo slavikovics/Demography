@@ -39,3 +39,6 @@ urllib3
 uvicorn
 scikit-learn
 statsmodels
+mcp<2
+openai
+python-dotenv
