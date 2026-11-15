@@ -1,0 +1,258 @@
+.year-slider {
+  --thumb: 24px;
+  display: grid;
+  /* ширины колонок фиксированы: шкала не должна менять размер от длины подписи */
+  grid-template-columns: 136px 104px minmax(0, 1fr);
+  align-items: center;
+  gap: 14px 20px;
+  padding: 12px 24px 10px;
+  background: linear-gradient(135deg, #1a365d 0%, #2d3748 100%);
+  color: #fff;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.18);
+}
+
+.year-slider__controls { display: flex; align-items: center; gap: 8px; }
+
+.icon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.icon-button:hover:not(:disabled) { background: rgba(255, 255, 255, 0.18); }
+.icon-button:active:not(:disabled) { transform: scale(0.94); }
+.icon-button:disabled { opacity: 0.35; cursor: not-allowed; }
+.icon-button:focus-visible { outline: none; box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5); }
+
+.icon-button--primary {
+  width: 44px;
+  height: 44px;
+  border: none;
+  background: linear-gradient(135deg, #4299e1, #38b2ac);
+  box-shadow: 0 4px 14px rgba(66, 153, 225, 0.4);
+}
+
+.icon-button--primary:hover:not(:disabled) { background: linear-gradient(135deg, #5aa9ec, #4fc4be); }
+
+.year-slider__current {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  min-width: 0;
+  width: 100%;
+}
+
+.year-slider__year {
+  font-size: 1.9rem;
+  font-weight: 800;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.01em;
+}
+
+.source-chip {
+  display: block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background: rgba(99, 179, 237, 0.22);
+  color: #bee3f8;
+}
+
+.source-chip--forecast {
+  background: rgba(246, 173, 85, 0.25);
+  color: #fbd38d;
+}
+
+.year-slider__track-area {
+  position: relative;
+  height: 62px;
+  min-width: 0;
+}
+
+.year-slider__track {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 10px;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.16);
+  overflow: hidden;
+}
+
+/* зона прогноза: диагональная штриховка */
+.year-slider__forecast-zone {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: calc(var(--thumb) / 2 + (100% - var(--thumb)) * var(--forecast-start));
+  background: repeating-linear-gradient(135deg, rgba(246, 173, 85, 0.55) 0 5px, rgba(246, 173, 85, 0.2) 5px 10px);
+}
+
+.year-slider__fill {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: calc(var(--thumb) / 2 + (100% - var(--thumb)) * var(--share));
+  background: linear-gradient(90deg, #4299e1, #38b2ac);
+  border-radius: 999px;
+}
+
+.year-slider__input {
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 100%;
+  height: 24px;
+  margin: 0;
+  background: transparent;
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+}
+
+.year-slider__input:focus { outline: none; }
+
+.year-slider__input::-webkit-slider-runnable-track { height: 24px; background: transparent; }
+.year-slider__input::-moz-range-track { height: 24px; background: transparent; }
+
+.year-slider__input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: var(--thumb);
+  height: var(--thumb);
+  border-radius: 50%;
+  background: #fff;
+  border: 4px solid #4299e1;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.35);
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.year-slider__input::-moz-range-thumb {
+  width: calc(var(--thumb) - 8px);
+  height: calc(var(--thumb) - 8px);
+  border-radius: 50%;
+  background: #fff;
+  border: 4px solid #4299e1;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.35);
+}
+
+.year-slider__input:hover::-webkit-slider-thumb { transform: scale(1.1); }
+.year-slider__input:focus-visible::-webkit-slider-thumb { box-shadow: 0 0 0 4px rgba(66, 153, 225, 0.5); }
+.year-slider__input:focus-visible::-moz-range-thumb { box-shadow: 0 0 0 4px rgba(66, 153, 225, 0.5); }
+
+.year-slider__ticks {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 24px;
+  height: 36px;
+  pointer-events: none;
+}
+
+.tick {
+  position: absolute;
+  left: calc(var(--thumb) / 2 + (100% - var(--thumb)) * var(--tick-share));
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 0;
+  border: none;
+  background: none;
+  font: inherit;
+  color: rgba(226, 232, 240, 0.6);
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.tick__mark { width: 2px; height: 5px; border-radius: 1px; background: currentColor; opacity: 0.6; }
+.tick--major .tick__mark { height: 8px; opacity: 0.9; }
+
+.tick__label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.tick:hover { color: #fff; }
+.tick--forecast { color: rgba(251, 211, 141, 0.75); }
+
+.tick--active { color: #fff; }
+.tick--active .tick__mark { background: #4fd1c5; opacity: 1; }
+.tick--active .tick__label {
+  padding: 3px 7px;
+  margin-top: -3px;
+  border-radius: 6px;
+  color: #fff;
+  background: linear-gradient(135deg, #4299e1, #38b2ac);
+  box-shadow: 0 3px 10px rgba(66, 153, 225, 0.35);
+}
+
+.year-slider__zones {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -6px;
+  height: 14px;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(226, 232, 240, 0.55);
+  pointer-events: none;
+}
+
+.year-slider__zones span { position: absolute; top: 0; left: 0; white-space: nowrap; }
+.year-slider__zones span + span { color: rgba(251, 211, 141, 0.8); padding-left: 8px; }
+
+/* на узких экранах подписи только у «круглых» лет */
+@media (max-width: 1100px) {
+  .tick:not(.tick--major):not(.tick--active) .tick__label { display: none; }
+}
+
+@media (max-width: 720px) {
+  .year-slider {
+    grid-template-columns: auto minmax(0, 1fr);
+    padding: 8px 14px 8px;
+    gap: 6px 14px;
+  }
+  .icon-button { width: 34px; height: 34px; }
+  .icon-button--primary { width: 40px; height: 40px; }
+  .year-slider__current { flex-direction: row; align-items: center; gap: 10px; min-width: 0; flex-wrap: nowrap; }
+  .year-slider__year { font-size: 1.45rem; }
+  .source-chip { display: inline-block; flex: 0 1 auto; min-width: 0; font-size: 0.58rem; padding: 2px 8px; }
+  .year-slider__track-area { grid-column: 1 / -1; height: 54px; }
+  .year-slider__zones { display: none; }
+  .tick--major:not(.tick--active) .tick__label { font-size: 0.62rem; }
+  /* активный год показывает бейдж, соседние подписи под ним скрыты */
+  .tick--active .tick__label { font-size: 0.7rem; }
+}
+
+@media (max-width: 480px) {
+  .year-slider__controls .icon-button:not(.icon-button--primary) { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .icon-button, .year-slider__input::-webkit-slider-thumb { transition: none; }
+}

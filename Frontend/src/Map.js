@@ -1,89 +1,97 @@
-import { MapContainer, TileLayer } from "react-leaflet";
-import "leaflet/dist/leaflet.css";
-import { useState, useEffect, useCallback } from 'react';
+import { useMemo, useState } from 'react';
+import { MapContainer, TileLayer, ZoomControl } from 'react-leaflet';
+import 'leaflet/dist/leaflet.css';
 import DistrictLayer from './DistrictLayer';
-import PopulationPopup from './PopulationPopup';
-import CountryOverview from "./CountryOverview";
+import DistrictPanel from './DistrictPanel';
+import CountryCard from './CountryCard';
+import IndicatorLegend from './IndicatorLegend';
+import { POPULATION } from './config';
+import { useIndicatorValues } from './hooks';
+import { buildColorScale, indicatorName, isSigned } from './indicators';
+import './Map.css';
 
-const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+// Границы Беларуси: карта сразу показывает страну целиком в любом размере окна
+const BELARUS_BOUNDS = [[51.2, 23.1], [56.2, 32.8]];
 
-export default function BelarusDistrictMap({ geoJson, year, language, selectedModel }) {
+export default function BelarusDistrictMap({
+  t, geoJson, year, model, language, indicators, indicator, source,
+}) {
   const [selectedFeature, setSelectedFeature] = useState(null);
-  const [populationData, setPopulationData] = useState(null);
-  const [loading, setLoading] = useState(false);
 
-  const fetchPopulationData = useCallback(async (territoryId, year, selectedModel) => {
-    if (!territoryId) return;
-    
-    setLoading(true);
-    try {
-      const response = await fetch(
-        `${apiUrl}/population/?territory_id=${territoryId}&year=${year}&model=${selectedModel}`
-      );
-      if (response.ok) {
-        const data = await response.json();
-        setPopulationData(data);
-      } else {
-        console.error('Failed to fetch population data');
-        setPopulationData(null);
-      }
-    } catch (error) {
-      console.error('Error fetching population data:', error);
-      setPopulationData(null);
-    }
-    setLoading(false);
-  }, []);
+  const indicatorMode = indicator !== POPULATION;
+  const indicatorMeta = indicators.find((item) => item.code === indicator);
+  const data = useIndicatorValues(indicatorMode ? indicator : null, year, model);
+  const signed = isSigned(indicator);
 
-  useEffect(() => {
-    if (selectedFeature) {
-      const regionId = selectedFeature.properties.regionId;
-      fetchPopulationData(regionId, year, selectedModel);
-    }
-  }, [year, selectedFeature, selectedModel, fetchPopulationData]);
+  const regionIds = useMemo(
+    () => geoJson.features.map((feature) => feature.properties.regionId).filter(Boolean),
+    [geoJson]
+  );
 
-  const handleFeatureSelect = (feature) => {
-    setSelectedFeature(feature);
-  };
+  const colorScale = useMemo(
+    () => buildColorScale(data.values, signed, regionIds),
+    [data.values, signed, regionIds]
+  );
 
-  const handlePopupClose = () => {
-    setSelectedFeature(null);
-    setPopulationData(null);
-  };
+  const indicatorInfo = indicatorMode && indicatorMeta ? {
+    code: indicator,
+    name: indicatorName(indicatorMeta, language),
+    unit: data.unit,
+    values: data.values,
+    noData: data.noData || Boolean(data.error),
+    signed,
+  } : null;
+
+  const selectedId = selectedFeature?.properties.regionId ?? null;
+  const layerKey = [indicator, year, model, language, selectedId, data.loading ? 'loading' : 'ready'].join('|');
 
   return (
-    <MapContainer
-      center={[53.0, 28.0]}
-      zoom={6}
-      style={{ 
-        width: "100%", 
-        height: "100%",
-        position: "absolute",
-        top: 0,
-        left: 0
-      }}
-      zoomControl={true}
-      attributionControl={true}
-    >
-      <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-      
-      <DistrictLayer 
-        geoJson={geoJson}
-        onFeatureSelect={handleFeatureSelect}
-      />
-      
-      <PopulationPopup
-        selectedFeature={selectedFeature}
-        populationData={populationData}
-        loading={loading}
-        year={year}
-        onClose={handlePopupClose}
-        language={language}
-        selectedModel={selectedModel}
-      />
+    <div className={`map-stage${selectedFeature ? ' map-stage--panel' : ''}`}>
+      <MapContainer
+        bounds={BELARUS_BOUNDS}
+        boundsOptions={{ padding: [24, 24] }}
+        minZoom={5}
+        maxBounds={[[48.5, 18], [59, 38]]}
+        zoomSnap={0.25}
+        zoomControl={false}
+        attributionControl={false}
+        className="map-canvas"
+      >
+        <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+        <ZoomControl position="bottomright" />
+        <DistrictLayer
+          geoJson={geoJson}
+          language={language}
+          selectedId={selectedId}
+          onFeatureSelect={setSelectedFeature}
+          layerKey={layerKey}
+          {...(indicatorMode ? {
+            colorOf: colorScale.colorOf,
+            values: data.values,
+            noData: indicatorInfo?.noData,
+            unit: data.unit,
+          } : {})}
+        />
+      </MapContainer>
 
-      <CountryOverview year={year} 
-                       language={language}
-                       selectedModel={selectedModel} />
-    </MapContainer>
+      <div className="map-overlay map-overlay--left">
+        <CountryCard t={t} language={language} year={year} model={model}
+                     indicatorInfo={indicatorInfo} source={source} />
+        {indicatorInfo && !data.loading && (
+          <IndicatorLegend t={t} language={language} name={indicatorInfo.name} unit={indicatorInfo.unit}
+                           buckets={colorScale.buckets} noData={indicatorInfo.noData} year={year} signed={signed} />
+        )}
+      </div>
+
+      {selectedFeature ? (
+        <div className="map-overlay map-overlay--right">
+          <DistrictPanel t={t} language={language} feature={selectedFeature} year={year} model={model}
+                         indicatorInfo={indicatorInfo} regionIds={regionIds} source={source}
+                         onClose={() => setSelectedFeature(null)} />
+        </div>
+      ) : (
+        <div className="map-hint" role="note">{t('panel.hint')}</div>
+      )}
+    </div>
   );
 }

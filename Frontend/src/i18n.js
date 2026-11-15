@@ -1,0 +1,206 @@
+export const LANGUAGES = [
+  { value: 'russian', label: 'Русский', short: 'RU' },
+  { value: 'english', label: 'English', short: 'EN' },
+];
+
+const dictionary = {
+  russian: {
+    'app.title': 'Демография Беларуси',
+    'app.subtitle': 'Население, показатели и прогнозы по районам',
+    'nav.map': 'Карта',
+    'nav.table': 'Таблица',
+    'nav.views': 'Режим просмотра',
+    'links.github': 'GitHub',
+    'links.belstat': 'Белстат',
+
+    'controls.indicator': 'Показатель',
+    'controls.model': 'Модель прогноза',
+    'controls.language': 'Язык',
+
+    'indicator.population': 'Население',
+    'group.population': 'Население',
+    'group.natural': 'Естественное движение',
+    'group.marriage': 'Браки и разводы',
+    'group.migration': 'Миграция',
+
+    'model.historical': 'Исторические данные',
+    'model.prophet': 'Prophet',
+    'model.linear': 'Линейная регрессия',
+    'model.exponential': 'Экспоненциальное сглаживание',
+
+    'source.historical': 'Белстат',
+    'source.forecast': 'Прогноз',
+
+    'common.year': 'Год',
+    'common.loading': 'Загрузка…',
+    'common.retry': 'Повторить',
+    'common.close': 'Закрыть',
+    'common.collapse': 'Свернуть',
+    'common.expand': 'Развернуть',
+    'common.noValue': 'нет значения',
+    'common.error': 'Не удалось загрузить данные',
+    'common.errorHint': 'Проверьте, что сервер API запущен, и повторите попытку.',
+    'common.regionId': 'ID региона',
+    'common.republic': 'Республика Беларусь',
+
+    'slider.label': 'Выбор года',
+    'slider.play': 'Запустить смену лет',
+    'slider.pause': 'Остановить',
+    'slider.prev': 'Предыдущий год',
+    'slider.next': 'Следующий год',
+    'slider.forecastZone': 'Прогноз',
+    'slider.historyZone': 'Данные',
+
+    'legend.title': 'Легенда',
+    'legend.noData': 'Нет данных за {year} год',
+    'legend.noDataHint': 'Белстат не публикует этот показатель по районам за выбранный год.',
+
+    'panel.hint': 'Нажмите на район, чтобы увидеть подробности',
+    'panel.total': 'Всего',
+    'panel.male': 'Мужчины',
+    'panel.female': 'Женщины',
+    'panel.population': 'Население',
+    'panel.noData': 'Данные о населении отсутствуют',
+    'panel.noDataFor': '{name}, {year}',
+    'panel.rank': 'Место среди районов',
+    'panel.rankValue': '{rank} из {total}',
+    'panel.vsRepublic': 'По республике',
+    'panel.trend': 'Динамика',
+    'panel.trendHistory': 'Данные',
+    'panel.trendForecast': 'Прогноз',
+    'panel.trendEmpty': 'Недостаточно данных для графика',
+    'panel.genderSplit': 'Соотношение полов',
+
+    'table.search': 'Поиск по названию',
+    'table.clearSearch': 'Очистить поиск',
+    'table.shown': 'Показано {shown} из {total}',
+    'table.rank': '№',
+    'table.name': 'Район',
+    'table.value': 'Значение',
+    'table.id': 'ID',
+    'table.noData': 'Нет данных за выбранный год',
+    'table.noDataHint': 'Попробуйте выбрать другой год или показатель.',
+    'table.noResults': 'Ничего не найдено',
+    'table.noResultsHint': 'Измените запрос или очистите поиск.',
+    'table.export': 'Скачать CSV',
+    'table.summary': 'Сводка',
+    'table.republic': 'По республике',
+    'table.max': 'Максимум',
+    'table.min': 'Минимум',
+    'table.average': 'Среднее по районам',
+    'table.count': 'Районов в таблице',
+    'table.lowGrowth': 'Наименьший прирост',
+    'table.highGrowth': 'Наибольший прирост',
+    'table.maxPopulation': 'Наибольшее население',
+    'table.minPopulation': 'Наименьшее население',
+    'table.population': 'Население',
+    'table.sortBy': 'Сортировать по столбцу «{column}»',
+
+  },
+  english: {
+    'app.title': 'Belarus Demography',
+    'app.subtitle': 'Population, indicators and forecasts by district',
+    'nav.map': 'Map',
+    'nav.table': 'Table',
+    'nav.views': 'View mode',
+    'links.github': 'GitHub',
+    'links.belstat': 'Belstat',
+
+    'controls.indicator': 'Indicator',
+    'controls.model': 'Forecast model',
+    'controls.language': 'Language',
+
+    'indicator.population': 'Population',
+    'group.population': 'Population',
+    'group.natural': 'Natural change',
+    'group.marriage': 'Marriages & divorces',
+    'group.migration': 'Migration',
+
+    'model.historical': 'Historical data',
+    'model.prophet': 'Prophet',
+    'model.linear': 'Linear regression',
+    'model.exponential': 'Exponential smoothing',
+
+    'source.historical': 'Belstat',
+    'source.forecast': 'Forecast',
+
+    'common.year': 'Year',
+    'common.loading': 'Loading…',
+    'common.retry': 'Retry',
+    'common.close': 'Close',
+    'common.collapse': 'Collapse',
+    'common.expand': 'Expand',
+    'common.noValue': 'no value',
+    'common.error': 'Failed to load data',
+    'common.errorHint': 'Make sure the API server is running and try again.',
+    'common.regionId': 'Region ID',
+    'common.republic': 'Republic of Belarus',
+
+    'slider.label': 'Year selector',
+    'slider.play': 'Play years',
+    'slider.pause': 'Pause',
+    'slider.prev': 'Previous year',
+    'slider.next': 'Next year',
+    'slider.forecastZone': 'Forecast',
+    'slider.historyZone': 'Data',
+
+    'legend.title': 'Legend',
+    'legend.noData': 'No data for {year}',
+    'legend.noDataHint': 'Belstat does not publish this indicator by district for the selected year.',
+
+    'panel.hint': 'Click a district to see details',
+    'panel.total': 'Total',
+    'panel.male': 'Male',
+    'panel.female': 'Female',
+    'panel.population': 'Population',
+    'panel.noData': 'No population data available',
+    'panel.noDataFor': '{name}, {year}',
+    'panel.rank': 'Rank among districts',
+    'panel.rankValue': '{rank} of {total}',
+    'panel.vsRepublic': 'Republic overall',
+    'panel.trend': 'Trend',
+    'panel.trendHistory': 'Data',
+    'panel.trendForecast': 'Forecast',
+    'panel.trendEmpty': 'Not enough data for a chart',
+    'panel.genderSplit': 'Gender split',
+
+    'table.search': 'Search by name',
+    'table.clearSearch': 'Clear search',
+    'table.shown': 'Showing {shown} of {total}',
+    'table.rank': '#',
+    'table.name': 'District',
+    'table.value': 'Value',
+    'table.id': 'ID',
+    'table.noData': 'No data for the selected year',
+    'table.noDataHint': 'Try a different year or indicator.',
+    'table.noResults': 'Nothing found',
+    'table.noResultsHint': 'Change the query or clear the search.',
+    'table.export': 'Download CSV',
+    'table.summary': 'Summary',
+    'table.republic': 'Republic overall',
+    'table.max': 'Maximum',
+    'table.min': 'Minimum',
+    'table.average': 'District average',
+    'table.count': 'Districts in table',
+    'table.lowGrowth': 'Lowest growth',
+    'table.highGrowth': 'Highest growth',
+    'table.maxPopulation': 'Largest population',
+    'table.minPopulation': 'Smallest population',
+    'table.population': 'Population',
+    'table.sortBy': 'Sort by column “{column}”',
+
+  },
+};
+
+export function createT(language) {
+  const table = dictionary[language] || dictionary.russian;
+  return (key, params) => {
+    let text = table[key] ?? dictionary.russian[key] ?? key;
+    if (params) {
+      Object.entries(params).forEach(([name, value]) => {
+        text = text.split(`{${name}}`).join(String(value));
+      });
+    }
+    return text;
+  };
+}

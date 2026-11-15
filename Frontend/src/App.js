@@ -1,57 +1,97 @@
+import { useEffect, useMemo, useState } from 'react';
 import './App.css';
-import './Scrollbars.css'
-import React from 'react';
-import YearSlider from './YearSlider';
 import Header from './Header';
 import BelarusDistrictMap from './Map';
-import belarusGeoJson from './belarus-districts.json';
 import BelarusDistrictTable from './BelarusDistrictTable';
+import YearSlider from './YearSlider';
+import belarusGeoJson from './belarus-districts.json';
+import { LANGUAGES, createT } from './i18n';
+import { MODELS, POPULATION, lastHistoricalYear } from './config';
+import { useIndicators, usePersistentState } from './hooks';
+
+const TABS = ['map', 'table'];
+
+// Сохранённое значение могло устареть (например, после обновления списка моделей)
+const pick = (value, allowed, fallback) => (allowed.includes(value) ? value : fallback);
 
 function App() {
-    const [year, setYear] = React.useState(2024);
-    const [selectedLanguage, setSelectedLanguage] = React.useState('russian');
-    const [selectedModel, setSelectedModel] = React.useState('prophet');
-    const [selectedTab, setSelectedTab] = React.useState('map');
-    const [tableMode, setTableMode] = React.useState('total'); // 'total', 'gender', 'all'
+  const [storedLanguage, setLanguage] = usePersistentState('demography.language', 'russian');
+  const [storedModel, setModel] = usePersistentState('demography.model', 'prophet');
+  const [storedIndicator, setIndicator] = usePersistentState('demography.indicator', POPULATION);
+  const [storedTab, setTab] = usePersistentState('demography.tab', 'map');
+  const [year, setYear] = useState(2024);
 
-    const handleLanguageChange = (event) => setSelectedLanguage(event.target.value);
-    const handleModelChange = (event) => setSelectedModel(event.target.value);
-    const handleTabChange = (event) => setSelectedTab(event.target.value);
-    const handleTableModeChange = (event) => setTableMode(event.target.value);
+  const indicators = useIndicators();
+  const language = pick(storedLanguage, LANGUAGES.map((item) => item.value), 'russian');
+  const model = pick(storedModel, MODELS, 'prophet');
+  const tab = pick(storedTab, TABS, 'map');
 
-    return (
-        <div className="App">
-            <Header
-                selectedLanguage={selectedLanguage}
-                onLanguageChange={handleLanguageChange}
-                selectedModel={selectedModel}
-                onModelChange={handleModelChange}
-                selectedTab={selectedTab}
-                onTabChange={handleTabChange}
-            />
-            <div className="map-container">
-                {selectedTab === 'map' ? (
-                    <BelarusDistrictMap
-                        geoJson={belarusGeoJson}
-                        year={year}
-                        selectedModel={selectedModel}
-                        language={selectedLanguage}
-                    />
-                ) : (
-                    <BelarusDistrictTable
-                        mode={tableMode}
-                        onModeChange={handleTableModeChange}
-                        selectedLanguage={selectedLanguage}
-                        year={year}
-                        selectedModel={selectedModel}
-                    />
-                )}
-            </div>
-            <footer className='year-slider-footer'> 
-                <YearSlider year={year} onYearChange={setYear}/>
-            </footer>
-        </div>
-    );
+  // пока список показателей не загружен, сохранённый выбор принимается как есть
+  const indicator = indicators.length === 0 || storedIndicator === POPULATION
+    || indicators.some((item) => item.code === storedIndicator)
+    ? storedIndicator
+    : POPULATION;
+
+  const t = useMemo(() => createT(language), [language]);
+
+  useEffect(() => {
+    document.documentElement.lang = language === 'english' ? 'en' : 'ru';
+    document.title = t('app.title');
+  }, [language, t]);
+
+  // что показывается в выбранном году: данные Белстата или прогноз модели
+  const lastYear = lastHistoricalYear(indicator);
+  const isForecast = year > lastYear;
+  const source = {
+    isForecast,
+    label: isForecast ? t('source.forecast') : t('source.historical'),
+  };
+
+  return (
+    <div className="app">
+      <Header
+        t={t}
+        language={language}
+        onLanguageChange={setLanguage}
+        model={model}
+        onModelChange={setModel}
+        tab={tab}
+        onTabChange={setTab}
+        indicators={indicators}
+        indicator={indicator}
+        onIndicatorChange={setIndicator}
+      />
+
+      <main className="app-main">
+        {tab === 'map' && (
+          <BelarusDistrictMap
+            t={t}
+            geoJson={belarusGeoJson}
+            year={year}
+            model={model}
+            language={language}
+            indicators={indicators}
+            indicator={indicator}
+            source={source}
+          />
+        )}
+        {tab === 'table' && (
+          <BelarusDistrictTable
+            t={t}
+            language={language}
+            year={year}
+            model={model}
+            indicators={indicators}
+            indicator={indicator}
+          />
+        )}
+      </main>
+
+      <footer className="app-footer">
+        <YearSlider t={t} year={year} onYearChange={setYear} lastHistoricalYear={lastYear} sourceLabel={source.label} />
+      </footer>
+    </div>
+  );
 }
 
 export default App;
