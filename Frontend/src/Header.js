@@ -46,8 +46,11 @@ export default function Header({
   const tabs = [
     { value: 'map', label: t('nav.map') },
     { value: 'table', label: t('nav.table') },
+    { value: 'chat', label: t('nav.chat') },
   ];
 
+  // на странице чата показатель и модель не нужны — остаётся только язык
+  const chatMode = tab === 'chat';
 
   return (
     <header className="app-header">
@@ -59,21 +62,25 @@ export default function Header({
         </div>
       </div>
 
-      <div className="header-controls">
-        <Select
-          className="header-controls__indicator"
-          label={t('controls.indicator')}
-          value={indicator}
-          options={indicatorOptions}
-          onChange={onIndicatorChange}
-        />
-        <Select
-          className="header-controls__model"
-          label={t('controls.model')}
-          value={model}
-          options={modelOptions}
-          onChange={onModelChange}
-        />
+      <div className={`header-controls${chatMode ? ' header-controls--compact' : ''}`}>
+        {!chatMode && (
+          <>
+            <Select
+              className="header-controls__indicator"
+              label={t('controls.indicator')}
+              value={indicator}
+              options={indicatorOptions}
+              onChange={onIndicatorChange}
+            />
+            <Select
+              className="header-controls__model"
+              label={t('controls.model')}
+              value={model}
+              options={modelOptions}
+              onChange={onModelChange}
+            />
+          </>
+        )}
         <Select
           className="header-controls__language"
           label={t('controls.language')}

@@ -1,15 +1,19 @@
-import { useEffect, useMemo, useState } from 'react';
+import { Suspense, lazy, useEffect, useMemo, useState } from 'react';
 import './App.css';
 import Header from './Header';
 import BelarusDistrictMap from './Map';
 import BelarusDistrictTable from './BelarusDistrictTable';
 import YearSlider from './YearSlider';
+import { useChat } from './useChat';
 import belarusGeoJson from './belarus-districts.json';
 import { LANGUAGES, createT } from './i18n';
 import { MODELS, POPULATION, lastHistoricalYear } from './config';
 import { useIndicators, usePersistentState } from './hooks';
 
-const TABS = ['map', 'table'];
+// страница чата подгружается при первом открытии: markdown-библиотеки не нужны карте и таблице
+const ChatPage = lazy(() => import('./Chat'));
+
+const TABS = ['map', 'table', 'chat'];
 
 // Сохранённое значение могло устареть (например, после обновления списка моделей)
 const pick = (value, allowed, fallback) => (allowed.includes(value) ? value : fallback);
@@ -33,6 +37,9 @@ function App() {
     : POPULATION;
 
   const t = useMemo(() => createT(language), [language]);
+
+  // состояние чата живёт здесь: ответ продолжает приходить, даже если переключиться на другую вкладку
+  const chat = useChat({ language, t });
 
   useEffect(() => {
     document.documentElement.lang = language === 'english' ? 'en' : 'ru';
@@ -85,11 +92,18 @@ function App() {
             indicator={indicator}
           />
         )}
+        {tab === 'chat' && (
+          <Suspense fallback={<div className="page-loading" role="status">{t('common.loading')}</div>}>
+            <ChatPage t={t} language={language} indicators={indicators} chat={chat} />
+          </Suspense>
+        )}
       </main>
 
-      <footer className="app-footer">
-        <YearSlider t={t} year={year} onYearChange={setYear} lastHistoricalYear={lastYear} sourceLabel={source.label} />
-      </footer>
+      {tab !== 'chat' && (
+        <footer className="app-footer">
+          <YearSlider t={t} year={year} onYearChange={setYear} lastHistoricalYear={lastYear} sourceLabel={source.label} />
+        </footer>
+      )}
     </div>
   );
 }

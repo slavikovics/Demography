@@ -51,6 +51,11 @@
   max-width: 900px;
 }
 
+.header-controls--compact {
+  grid-template-columns: minmax(130px, 200px);
+  max-width: 200px;
+}
+
 .header-nav {
   grid-area: nav;
   display: flex;
@@ -125,6 +130,7 @@
     padding: 10px 20px 12px;
   }
   .header-controls { justify-self: stretch; max-width: none; }
+  .header-controls--compact { justify-self: end; max-width: 200px; }
   .header-links { display: none; }
 }
 
@@ -145,4 +151,5 @@
   .segmented__item { padding: 7px 12px; font-size: 0.8rem; }
   .header-controls { grid-template-columns: 1fr 1fr; gap: 8px; }
   .header-controls__indicator { grid-column: 1 / -1; }
+  .header-controls--compact { grid-template-columns: 1fr; max-width: none; }
 }
