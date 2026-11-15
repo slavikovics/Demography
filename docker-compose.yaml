@@ -10,7 +10,6 @@ services:
     volumes:
       - ./data/:/app/
     environment:
-      - FLASK_ENV=production
       - PYTHONPATH=/app
     command: >
       sh -c "python -m prepare || python -m run"

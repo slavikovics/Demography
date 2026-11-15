@@ -93,25 +93,28 @@ class PopulationRepository:
         allowed_columns = ['id', 'name_ru', 'name_en', 'people']
         allowed_directions = ['ASC', 'DESC']
 
+        sort_by = sort_by or 'id'
+        sorting_direction = sorting_direction or 'asc'
+
         if sort_by not in allowed_columns:
             raise ValueError(f"Invalid sort column: {sort_by}")
         if sorting_direction.upper() not in allowed_directions:
-            raise ValueError(f"Invalid sort direction: {sort_by}")
+            raise ValueError(f"Invalid sort direction: {sorting_direction}")
 
         conn = sqlite3.connect(self.db_path)
         cursor = conn.cursor()
 
         query = f'''
-            SELECT population.id AS id, name_ru, name_en, people
+            SELECT territories.id AS id, name_ru, name_en, people
             FROM population
             JOIN territories ON population.territory_id = territories.id
-            WHERE year = {year} AND gender = 'Total'
-            AND model = '{model}'
-            ORDER BY {sort_by} {sorting_direction}
+            WHERE year = ? AND gender = 'Total'
+            AND model = ?
+            ORDER BY {sort_by} {sorting_direction.upper()}
         '''
 
         try:
-            cursor.execute(query)
+            cursor.execute(query, (year, model))
             results = cursor.fetchall()
             conn.close()
         except sqlite3.Error as e:
@@ -129,11 +132,11 @@ class PopulationRepository:
             SELECT name_ru, name_en, people
             FROM population
             JOIN territories ON population.territory_id = territories.id
-            WHERE year = {year} AND gender = 'Total' AND model = '{model}'
+            WHERE year = ? AND gender = 'Total' AND model = ?
             ORDER BY people ASC
             LIMIT 1
         '''
-        cursor.execute(query)
+        cursor.execute(query, (year, model))
         results.append(cursor.fetchall())
         query = f'''
             SELECT name_ru, name_en, people
@@ -145,11 +148,11 @@ class PopulationRepository:
                     RANK() OVER (ORDER BY p.people DESC) as rank
                 FROM population p
                 JOIN territories t ON p.territory_id = t.id
-                WHERE year = {year} AND gender = 'Total' AND model = '{model}'
+                WHERE year = ? AND gender = 'Total' AND model = ?
             ) ranked
             WHERE rank = 2;
         '''
-        cursor.execute(query)
+        cursor.execute(query, (year, model))
         results.append(cursor.fetchall())
 
         prev_year = year - 1
@@ -168,16 +171,16 @@ class PopulationRepository:
                 FROM territories t
                     JOIN population p24 ON t.id = p24.territory_id
                     JOIN population p23 ON t.id = p23.territory_id
-                WHERE p24.year = {year} 
-                        AND p23.year = {prev_year}
+                WHERE p24.year = ? 
+                        AND p23.year = ?
                         AND p24.gender = 'Total'
                         AND p23.gender = 'Total'
-                        AND p23.model = '{prev_year_model}'
-                        AND p24.model = '{model}'
+                        AND p23.model = ?
+                        AND p24.model = ?
             ) ranked
             WHERE row_num = 2;
         '''
-        cursor.execute(query)
+        cursor.execute(query, (year, prev_year, prev_year_model, model))
         results.append(cursor.fetchall())
         query = f'''
             SELECT 
@@ -187,16 +190,16 @@ class PopulationRepository:
             FROM territories t
                 JOIN population p24 ON t.id = p24.territory_id
                 JOIN population p23 ON t.id = p23.territory_id
-            WHERE p24.year = {year} 
-                    AND p23.year = {prev_year}
+            WHERE p24.year = ? 
+                    AND p23.year = ?
                     AND p24.gender = 'Total'
                     AND p23.gender = 'Total'
-                    AND p23.model = '{prev_year_model}'
-                    AND p24.model = '{model}'
+                    AND p23.model = ?
+                    AND p24.model = ?
             ORDER BY people_growth DESC
             LIMIT 1;
         '''
-        cursor.execute(query)
+        cursor.execute(query, (year, prev_year, prev_year_model, model))
         results.append(cursor.fetchall())
 
         conn.close()
