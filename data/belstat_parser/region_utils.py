@@ -1,5 +1,6 @@
 from belstat_parser.code import Code
 from belstat_parser.dataflow import Dataflow
+from indicator_catalog import REGIONAL_CITY_PAIRS  # noqa: F401  (используется в parser.py)
 
 
 def extract_district_codes_only(dataflow :Dataflow):
@@ -12,9 +13,3 @@ def extract_district_codes_only(dataflow :Dataflow):
             districts.append(code.code_id)
 
     return districts
-
-
-
-
-
-

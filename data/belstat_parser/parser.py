@@ -1,5 +1,6 @@
 from belstat_parser.population import get_datastructures
 from belstat_parser.population import get_population
+from belstat_parser.region_utils import REGIONAL_CITY_PAIRS
 from models.territory import Territory
 from models.population_record import PopulationRecord
 
@@ -58,26 +59,19 @@ def insert_regional_city_to_district(population_records, city_id, district_id):
 
 
 def process_regional_cities(population_records):
-    insert_regional_city_to_district(population_records, 919093, 919075)
-    insert_regional_city_to_district(population_records, 919092, 919077)
-    insert_regional_city_to_district(population_records, 919094, 919088)
-    insert_regional_city_to_district(population_records, 919118, 919099)
-    insert_regional_city_to_district(population_records, 919119, 919108)
-    insert_regional_city_to_district(population_records, 919145, 919126)
-    insert_regional_city_to_district(population_records, 919165, 919150)
-    insert_regional_city_to_district(population_records, 919200, 919193)
-    insert_regional_city_to_district(population_records, 919225, 919203)
-    insert_regional_city_to_district(population_records, 919224, 919215)
+    for city_id, district_id in REGIONAL_CITY_PAIRS:
+        insert_regional_city_to_district(population_records, city_id, district_id)
+
+
+def get_raw_populations():
+    """Население как опубликовано (без добавления городов к районам)."""
+    dataflow = get_datastructures()
+    dataset = get_population(dataflow)
+    return [PopulationRecord.from_observation(observation) for observation in dataset.observations]
 
 
 def get_populations():
-    dataflow = get_datastructures()
-    dataset = get_population(dataflow)
-    population_records = []
-
-    for observation in dataset.observations:
-        population_records.append(PopulationRecord.from_observation(observation))
-
+    population_records = get_raw_populations()
     process_regional_cities(population_records)
 
     return population_records
