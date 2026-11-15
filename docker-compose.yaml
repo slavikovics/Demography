@@ -1,6 +1,20 @@
-version: '3.8'
 
 services:
+  # MCP-сервер: инструменты доступа к демографической статистике (read-only).
+  # Порт наружу не публикуется — к нему обращается только backend внутри сети compose.
+  mcp:
+    build:
+      context: ./data
+      dockerfile: Dockerfile
+    volumes:
+      - ./data/:/app/:ro
+    environment:
+      - PYTHONPATH=/app
+      - DEMOGRAPHY_DB=/app/demography.db
+    command: python -m mcp_server --host 0.0.0.0 --port 8000
+    expose:
+      - "8000"
+
   backend:
     build: 
       context: ./data
@@ -9,10 +23,17 @@ services:
       - "5000:5000"
     volumes:
       - ./data/:/app/
+    # ключ OpenRouter (OPENROUTER_API_KEY) берётся из data/.env — файл не коммитится
+    env_file:
+      - path: ./data/.env
+        required: false
     environment:
       - PYTHONPATH=/app
+      - MCP_URL=http://mcp:8000/mcp
     command: >
       sh -c "python -m prepare || python -m run"
+    depends_on:
+      - mcp
 
   frontend:
     build: 

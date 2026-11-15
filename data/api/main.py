@@ -7,11 +7,13 @@ from models.table_record import TableRecord
 from models.indicator_record import IndicatorRecord
 from indicator_catalog import INDICATORS
 from fastapi.middleware.cors import CORSMiddleware
+from api.chat import lifespan, router as chat_router
 
 app = FastAPI(
     title="Demography API",
     description="API for accessing population data and forecasts",
     version="1.0.0",
+    lifespan=lifespan,
 )
 
 app.add_middleware(
@@ -23,6 +25,7 @@ app.add_middleware(
 )
 
 db = DemographyDatabase()
+app.include_router(chat_router)
 
 @app.get("/")
 async def root():

@@ -4,3 +4,4 @@ temp
 /temp
 __pycache__
 demography.db
+.env
