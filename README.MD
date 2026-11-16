@@ -1,6 +1,7 @@
 # Belarusian demography
-![Map](./images/map.png)
-![Table](./images/table.png)
+![Map](./images/map.jpg)
+![Table](./images/table.jpg)
+![Chat](./images/chat.jpg)
 ## Acomplished tasks:
 - Parsing SDMX-JSON datastructures from belstat. 
 - Fetching data and saving to database.

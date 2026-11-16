@@ -5,7 +5,10 @@
 """
 from typing import Annotated, List, Literal, Optional
 
+import os
+
 from mcp.server.fastmcp import FastMCP
+from mcp.server.transport_security import TransportSecuritySettings
 from pydantic import Field
 from starlette.requests import Request
 from starlette.responses import JSONResponse
@@ -18,7 +21,13 @@ INSTRUCTIONS = """\
 3) get_series / rank_territories / compare_years / region_totals / territory_profile — получить числа.
 Все значения возвращаются как есть из базы; прогнозы помечены source = forecast:<модель>."""
 
-mcp = FastMCP('demography', instructions=INSTRUCTIONS, log_level='WARNING')
+# Разрешаем обращение по имени сервиса из сети compose (иначе «Invalid Host header: mcp:8000»).
+_allowed_hosts = [h.strip() for h in os.getenv('MCP_ALLOWED_HOSTS', 'mcp:*,localhost:*,127.0.0.1:*').split(',') if h.strip()]
+mcp = FastMCP(
+    'demography', instructions=INSTRUCTIONS, log_level='WARNING',
+    transport_security=TransportSecuritySettings(
+        enable_dns_rebinding_protection=True, allowed_hosts=_allowed_hosts, allowed_origins=['*']),
+)
 
 IndicatorArg = Annotated[str, Field(description=(
     "Показатель: код (например '10101200001'), ключ ('births', 'deaths', 'net_migration', 'marriages', "
